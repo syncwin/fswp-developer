@@ -2,6 +2,10 @@
 
 Each skill also keeps its own `CHANGELOG.md`. Semantic versioning: breaking = major, new capability = minor, wording = patch.
 
+## 0.4.1 — 2026-11-02
+
+- Published at `syncwin/fswp-developer` with the marketplace `syncwin-fswp-developer`; README install steps for the app and Claude Code.
+
 ## 0.4.0 — 2026-09-28
 
 Author: @wasimness (SyncWin). Contact: support@syncwin.com.

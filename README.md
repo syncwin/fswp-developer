@@ -37,8 +37,8 @@ Official WordPress documentation is linked, not copied: `skills/fswp-developer/r
 
 ## Install
 
-- **claude.ai, desktop app, mobile (auto-updates):** Settings → Customize → Plugins → Add → Add marketplace → `syncwin/full-stack-wp-developer`, then install Full-Stack WP Developer.
-- **Claude Code terminal (instead of the app):** `claude plugin marketplace add syncwin/full-stack-wp-developer`, then `claude plugin install fswp-developer@fswp-developer`.
+- **claude.ai, desktop app, mobile (auto-updates):** Settings → Customize → Plugins → Add → Add marketplace → `syncwin/fswp-developer`, then install Full-Stack WP Developer.
+- **Claude Code terminal (instead of the app):** `claude plugin marketplace add syncwin/fswp-developer`, then `claude plugin install fswp-developer@syncwin-fswp-developer`.
 
 Or locally: unzip and run `claude --plugin-dir ./fswp-developer`. No external dependencies; PHP-based checks report NOT RUN with the exact command to run when PHP is missing.
 
