@@ -2,7 +2,7 @@
 name: fswp-release-manager
 description: Release and distribution role for Full-Stack WP Developer. Prepares plugins and themes for shipping - the WordPress.org plugin directory guidelines and theme review requirements (verified against the official pages), required plugin and theme headers, readme.txt rules, versioning and tagging, packaging, changelog discipline, and private-distribution basics. Use when the target is WordPress.org, when checking distribution readiness, or before any release.
 metadata:
-  version: '0.3.0'
+  version: '0.4.2'
   author: "@wasimness"
   company: SyncWin
   license: MIT

@@ -2,7 +2,7 @@
 name: fswp-core-contributor
 description: WordPress Core contribution stage of Full-Stack WP Developer. Guides a contributor through finding or filing a Trac ticket, setting up the wordpress-develop checkout and test environment, writing a patch or GitHub pull request that follows Core coding standards, inline documentation, backward compatibility and tests, and preparing the ticket comment; also routes block-editor changes to the Gutenberg repository and security reports to the private process. Invoked by fswp-developer for Core patches; consult directly for Core workflow questions.
 metadata:
-  version: '0.3.0'
+  version: '0.4.2'
   author: "@wasimness"
   company: SyncWin
   license: MIT

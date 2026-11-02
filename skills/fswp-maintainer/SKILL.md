@@ -2,7 +2,7 @@
 name: fswp-maintainer
 description: Change stage for existing WordPress code in Full-Stack WP Developer. Updates, fixes, refactors, and upgrades existing plugins and themes without breaking them, and builds add-ons for products you do not own (WooCommerce extensions, page-builder elements, extensions of other plugins) using hooks instead of edits to third-party files. Covers reading before changing, parity lists, deprecation, host compatibility, upgrade paths, and patch delivery. Invoked by fswp-developer after an approved change brief; consult directly for safe-change or add-on questions.
 metadata:
-  version: '0.3.0'
+  version: '0.4.2'
   author: "@wasimness"
   company: SyncWin
   license: MIT
