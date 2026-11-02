@@ -1,0 +1,28 @@
+{
+  "name": "fswp-developer",
+  "displayName": "Full-Stack WP Developer",
+  "version": "0.4.0",
+  "description": "Full-Stack WP Developer: plan, build, extend, verify, and review WordPress themes, plugins, add-ons, and Core patches across the full development lifecycle.",
+  "author": {
+    "name": "@wasimness",
+    "email": "support@syncwin.com",
+    "url": "https://syncwin.com"
+  },
+  "homepage": "https://syncwin.com",
+  "license": "MIT",
+  "keywords": [
+    "wordpress",
+    "wp",
+    "theme",
+    "plugin",
+    "block-theme",
+    "addon",
+    "wordpress-core",
+    "php",
+    "security",
+    "qa",
+    "code-review",
+    "SyncWin"
+  ],
+  "repository": "https://github.com/syncwin/full-stack-wp-developer"
+}
