@@ -193,8 +193,8 @@ def main():
             generated.append(write_file(src, dst, ctx, args.out))
 
     # Feature documentation stubs (references/standards.md section 4).
-    # Skeleton only — never invented content. fswp-plugin-developer fills each TODO from
-    # the approved PRD before delivery; qa_check.py flags any TODO left in.
+    # Skeleton only — never invented content. fswp-plugin-developer fills each FILL IN: marker from
+    # the approved PRD before delivery; qa_check.py flags any FILL IN: marker left in.
     FEATURE_DOCS = {
         "cpt": ("Custom post type", "PRD section 5 (Data model)"),
         "db": ("Custom database table", "PRD section 5 (Data model)"),
@@ -207,7 +207,7 @@ def main():
     if features:
         os.makedirs(docs_dir, exist_ok=True)
         index_lines = [f"# {ctx['plugin_name']} — feature documentation", "",
-                       "One file per feature. Fill every TODO from the approved PRD before delivery.", ""]
+                       "One file per feature. Fill every FILL IN: marker from the approved PRD before delivery.", ""]
         for feature in sorted(features):
             title, prd_ref = FEATURE_DOCS[feature]
             index_lines.append(f"- [{title}]({feature}.md)")
@@ -215,31 +215,31 @@ def main():
             with open(doc_path, "w", encoding="utf-8") as fh:
                 fh.write(f"""# {title}
 
-<!-- TODO: fill from {prd_ref} before delivery. Remove this comment once done. -->
+<!-- Stub: fill from {prd_ref} before delivery. Remove this comment once done. -->
 
 ## What it does
 
-TODO: one or two sentences, plain language.
+FILL IN: one or two sentences, plain language.
 
 ## How it works
 
-TODO: the mechanism — hooks used, data flow, key functions/classes.
+FILL IN: the mechanism — hooks used, data flow, key functions/classes.
 
 ## Inputs
 
-TODO: settings, parameters, REST args, or shortcode attributes. Remove this heading if none apply.
+FILL IN: settings, parameters, REST args, or shortcode attributes. Remove this heading if none apply.
 
 ## Outputs
 
-TODO: what it renders, returns, or stores. Remove this heading if none apply.
+FILL IN: what it renders, returns, or stores. Remove this heading if none apply.
 
 ## Dependencies
 
-TODO: other features/classes it relies on, external services, the JS/admin tier it uses. Remove this heading if none apply.
+FILL IN: other features/classes it relies on, external services, the JS/admin tier it uses. Remove this heading if none apply.
 
 ## Constraints
 
-TODO: capability required, rate limits, size caps, version requirements. Remove this heading if none apply.
+FILL IN: capability required, rate limits, size caps, version requirements. Remove this heading if none apply.
 """)
             generated.append(doc_path)
         index_path = os.path.join(docs_dir, "README.md")

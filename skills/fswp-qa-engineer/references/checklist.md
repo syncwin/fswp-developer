@@ -45,7 +45,7 @@ Items marked (auto) are enforced by `qa_check.py`; confirm the script passed, do
 - [ ] If the version was bumped: header `Version`, the version constant, and `readme.txt` Stable tag all moved together (auto, `qa_check.py`), and a new changelog entry was opened for it.
 - [ ] Technology stack unchanged from the prior iteration unless a stated reason justified the change (industry standard conflict, technical constraint, requirement change) — check the PRD's section 1b against what was actually built.
 - [ ] No invented project metadata: every header/readme/about-screen field traces to something the user stated; anything unstated is absent, not a placeholder.
-- [ ] `docs/` has an entry for every feature the PRD lists, each covering what applies from: what it does, how it works, inputs, outputs, dependencies, constraints. Updated for any feature this iteration touched, not just new ones. (auto: presence and TODO-completion are both checked by `qa_check.py`; only the actual quality of the filled content needs a human read.)
+- [ ] `docs/` has an entry for every feature the PRD lists, each covering what applies from: what it does, how it works, inputs, outputs, dependencies, constraints. Updated for any feature this iteration touched, not just new ones. (auto: presence and stub completion (no `FILL IN:` left) are both checked by `qa_check.py`; only the actual quality of the filled content needs a human read.)
 
 ## Distribution
 - [ ] WordPress.org target: `readme.txt` valid, Stable tag matches (auto), GPL-compatible, no remote code, no undisclosed phone-home; `fswp-release-manager` consulted.

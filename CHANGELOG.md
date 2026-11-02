@@ -2,6 +2,11 @@
 
 Each skill also keeps its own `CHANGELOG.md`. Semantic versioning: breaking = major, new capability = minor, wording = patch.
 
+## 0.4.3 — 2026-11-02
+
+- Scaffolded docs stubs use a `FILL IN:` marker instead of TODO; `qa_check.py` still fails on any unfilled stub.
+- Skill versions follow the plugin version.
+
 ## 0.4.2 (2026-11-02)
 
 - Plugin icon (`assets/icon.png`, `assets/icon.svg`).

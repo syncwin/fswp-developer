@@ -2,7 +2,7 @@
 name: fswp-theme-developer
 description: Theme build stage of Full-Stack WP Developer. Builds custom WordPress themes - block themes (theme.json, templates, template parts, patterns, style variations), classic themes (template hierarchy, functions.php, theme supports), hybrids, and child themes - with accessibility, escaping, and directory readiness built in, plus a scaffold script. Invoked by fswp-developer after an approved PRD for a new theme; consult directly for a specific theme pattern. For changes to an existing theme use fswp-maintainer.
 metadata:
-  version: '0.4.2'
+  version: '0.4.3'
   author: "@wasimness"
   company: SyncWin
   license: MIT

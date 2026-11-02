@@ -2,7 +2,7 @@
 name: fswp-block-developer
 description: Domain skill for WordPress block editor work in Full-Stack WP Developer. Covers building custom Gutenberg blocks (block.json, static and dynamic rendering, attributes, supports, InnerBlocks, variations, deprecations, block bindings), block patterns, and the Interactivity API (data-wp directives, stores, server-side state), with the @wordpress/scripts build workflow. Use for any custom block, pattern, or front-end interactivity in a plugin or theme.
 metadata:
-  version: '0.4.2'
+  version: '0.4.3'
   author: "@wasimness"
   company: SyncWin
   license: MIT

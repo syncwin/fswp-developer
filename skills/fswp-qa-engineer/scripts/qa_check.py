@@ -220,9 +220,9 @@ def run(root):
             if not doc_files:
                 add("FAIL", "docs/ feature documentation present", "docs/ exists but has no feature files")
             else:
-                unfilled = [f for f in doc_files if "TODO:" in read(os.path.join(docs_dir, f))]
+                unfilled = [f for f in doc_files if "FILL IN:" in read(os.path.join(docs_dir, f))]
                 add("FAIL" if unfilled else "PASS", "docs/ feature documentation completed",
-                    f"unfilled TODO stub(s): {', '.join(unfilled)}" if unfilled else f"{len(doc_files)} doc file(s), all filled")
+                    f"unfilled stub(s): {', '.join(unfilled)}" if unfilled else f"{len(doc_files)} doc file(s), all filled")
     else:
         add("SKIP", "docs/ feature documentation present", "no feature classes detected")
 
