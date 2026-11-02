@@ -2,6 +2,10 @@
 
 Each skill also keeps its own `CHANGELOG.md`. Semantic versioning: breaking = major, new capability = minor, wording = patch.
 
+## 0.4.2 (2026-11-02)
+
+- Plugin icon (`assets/icon.png`, `assets/icon.svg`).
+
 ## 0.4.1 — 2026-11-02
 
 - Published at `syncwin/fswp-developer` with the marketplace `syncwin-fswp-developer`; README install steps for the app and Claude Code.

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
   "name": "syncwin-fswp-developer",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Claude plugins from SyncWin for building and shipping production-grade WordPress software.",
   "owner": {
     "name": "SyncWin",
@@ -13,7 +13,7 @@
       "name": "fswp-developer",
       "source": "./",
       "description": "Swiss-army-knife for WP development: build custom themes and plugins, update existing ones, create add-ons, and prepare Core patches, with a mechanical QA gate and independent security and quality review.",
-      "version": "0.4.1",
+      "version": "0.4.2",
       "author": {
         "name": "@wasimness",
         "email": "support@syncwin.com",
