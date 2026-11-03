@@ -1,11 +1,12 @@
 ---
 name: fswp-security-engineer
 description: Shared WordPress security baseline for Full-Stack WP Developer. The rules for validating and sanitizing input, escaping output by context, capability checks, nonces, prepared SQL, safe file handling, REST and AJAX authorization, and secrets, for plugins, themes, add-ons, and Core patches. Use whenever code reads request data, prints data, queries the database, handles uploads, or exposes an endpoint; loaded by the build, extend, and review skills.
+license: MIT
 metadata:
-  version: '0.4.3'
+  displayName: "FSWP Security Engineer"
+  version: "0.4.4"
   author: "@wasimness"
-  company: SyncWin
-  license: MIT
+  company: "SyncWin"
 ---
 
 # FSWP Security Engineer

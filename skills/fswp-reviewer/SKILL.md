@@ -1,11 +1,12 @@
 ---
 name: fswp-reviewer
 description: Independent review stage of Full-Stack WP Developer. Reviews a finished WordPress plugin, theme, add-on, or Core patch through a security lens (WordPress-specific vulnerabilities, REST and AJAX authorization with an API risk map, AI-generated-code risks), a quality lens (error handling, data and upgrade safety, performance, i18n, accessibility, comment accuracy, test gaps, class and type design, scope), and an optional lean lens for trimming over-engineering, reporting only high-confidence findings in a fixed format. Invoked by fswp-developer after the verify gate, normally through the fswp-code-reviewer agent; consult directly to review or optimize any WordPress code.
+license: MIT
 metadata:
-  version: '0.4.3'
+  displayName: "FSWP Reviewer"
+  version: "0.4.4"
   author: "@wasimness"
-  company: SyncWin
-  license: MIT
+  company: "SyncWin"
 ---
 
 # FSWP Reviewer

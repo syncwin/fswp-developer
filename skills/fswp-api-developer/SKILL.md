@@ -1,11 +1,12 @@
 ---
 name: fswp-api-developer
 description: Domain skill for WordPress REST API and Abilities API work in Full-Stack WP Developer. Covers registering routes with schemas, argument validation and sanitization, permission callbacks, controller classes, exposing post types and meta, authentication (cookie nonce, application passwords), pagination and errors, and registering abilities with input and output schemas and safety annotations. Use for any custom endpoint or machine-readable capability in a plugin or theme.
+license: MIT
 metadata:
-  version: '0.4.3'
+  displayName: "FSWP API Developer"
+  version: "0.4.4"
   author: "@wasimness"
-  company: SyncWin
-  license: MIT
+  company: "SyncWin"
 ---
 
 # FSWP API Developer
