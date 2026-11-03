@@ -1,10 +1,10 @@
 # Credits
 
-Full-Stack WP Developer is one MIT-licensed package. Every skill, script, and reference in it was written for this plugin. No third-party skill is forked, bundled, or copied. The projects below shaped ideas or are linked as sources of truth; their licenses are named for reference only and do not apply to this package.
+Full-Stack WP DevOps is one MIT-licensed package. Every skill, script, and reference in it was written for this plugin. No third-party skill is forked, bundled, or copied. The projects below shaped ideas or are linked as sources of truth; their licenses are named for reference only and do not apply to this package.
 
 | Project | What we learned from it | License (reference) |
 |---|---|---|
-| WordPress developer documentation and Core Contributor Handbook (WordPress community) | Source of truth for APIs, standards, and contribution workflow. Linked from `skills/fswp-developer/references/official-docs.md`, not copied | See each site |
+| WordPress developer documentation and Core Contributor Handbook (WordPress community) | Source of truth for APIs, standards, and contribution workflow. Linked from `skills/fswpdevops/references/official-docs.md`, not copied | See each site |
 | [WordPress/agent-skills](https://github.com/WordPress/agent-skills) | Which WordPress domains an agent skill set should cover | GPL-2.0-or-later |
 | [Anthropic claude-plugins-official](https://github.com/anthropics/claude-plugins-official) (pr-review-toolkit) | The idea of confidence-scored review that reports only high-certainty findings | Apache-2.0 |
 | [OWASP secure-agent-playbook](https://github.com/OWASP/secure-agent-playbook) | The idea of structured security review with weakness IDs | CC BY 4.0 |

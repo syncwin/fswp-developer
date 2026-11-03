@@ -1,3 +1,28 @@
+# Changelog
+
+## [0.5.0] - 2026-11-03
+### Changed (breaking: plugin and skill names)
+Renamed to **Full-Stack WP DevOps** (`fswpdevops`, trigger `/fswpdevops`), matching Full-Stack DevOps (`fsdevops`). Repository `syncwin/fswpdevops` (the old URL redirects); marketplace `syncwin-fswpdevops`. Every skill starts with the router name, so typing `fswpdevops` lists them all.
+
+| 0.4.4 | 0.5.0 |
+|---|---|
+| `fswp-developer` (`/fswp`) | `fswpdevops` (`/fswpdevops`) |
+| `fswp-architect` | `fswpdevops-architect` |
+| `fswp-plugin-developer` | `fswpdevops-plugin` |
+| `fswp-theme-developer` | `fswpdevops-theme` |
+| `fswp-block-developer` | `fswpdevops-block` |
+| `fswp-api-developer` | `fswpdevops-api` |
+| `fswp-core-contributor` | `fswpdevops-core` |
+| `fswp-maintainer` | `fswpdevops-maintainer` |
+| `fswp-qa-engineer` | `fswpdevops-qa` |
+| `fswp-reviewer` | `fswpdevops-reviewer` |
+| `fswp-security-engineer` | `fswpdevops-security` |
+| `fswp-performance-engineer` | `fswpdevops-performance` |
+| `fswp-devops-engineer` | `fswpdevops-ci` |
+| `fswp-release-manager` | `fswpdevops-release` |
+| agent `fswp-code-reviewer` | agent `fswpdevops-code-reviewer` |
+
+Unchanged on purpose (code identifiers in generated projects and tool paths): the `fswp-alpine-loader` script handle and the `~/.fswp-tools` / `FSWP_TOOLS` toolchain folder.
 # Changelog — Full-Stack WP Developer
 
 Each skill also keeps its own `CHANGELOG.md`. Semantic versioning: breaking = major, new capability = minor, wording = patch.
