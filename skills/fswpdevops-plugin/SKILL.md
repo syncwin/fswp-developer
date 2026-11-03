@@ -1,17 +1,15 @@
 ---
 name: fswpdevops-plugin
-description: Plugin build stage of Full-Stack WP DevOps. House standards and code templates for real WordPress plugins (not shortcode snippets) - folder anatomy, activation/uninstall lifecycle, custom post types and tables, admin UI tiers, front-end output on the Atomic Framework, REST and cron, i18n, distribution, and the Tier 3 React admin stack - plus a scaffold script. Also the base structure for add-ons. Invoked by fswpdevops after an approved PRD; consult directly for a specific plugin build pattern.
+description: Plugin build stage of Full-Stack WP DevOps. House standards and code templates for real WordPress plugins (not shortcode snippets) - folder anatomy, activation/uninstall lifecycle, custom post types and tables, admin UI tiers, front-end output on the Atomic Framework, REST and cron, i18n, distribution, and the Tier 3 React admin stack - plus a scaffold script. Also the base structure for add-ons. Invoked by fswpdevops after an approved PRD; use directly for a specific plugin build pattern.
 license: MIT
 metadata:
   displayName: "FSWPDevOps Plugin Developer"
-  version: "0.5.0"
+  version: "0.5.1"
   author: "@wasimness"
   company: "SyncWin"
 ---
 
 # FSWPDevOps Plugin Developer
-
-**Foundational (always applied):** `fswpdevops/references/lean-coding.md` (write less, reuse first), `fswpdevops/references/coding-standards.md` (coding standards, docs, i18n, accessibility), and `fswpdevops-security` (input, output, authorization).
 
 Executes an **approved PRD** (`fswpdevops-architect`). Prefix, distribution target, feature surface, and JS tier are already decided; do not re-ask. For each step, load the domain skill for the general procedure and this skill's reference for house depth, templates, and stricter rules. Precedence: `fswpdevops/references/precedence.md`.
 
@@ -77,3 +75,5 @@ Installable `{plugin-slug}.zip` (plugin folder at the zip root) plus `readme.txt
 
 - `scripts/scaffold_plugin.py`: `--features cpt,db,rest,cron,admin,frontend` (any subset), `--js-tier vanilla|alpine`, `--admin-tier native|react|app`, `--distribution wporg|private|both`, `--plugin-uri`, `--author-uri`, `--foundation-dir`, `--zip`.
 - `assets/templates/`: plugin skeleton with `{{PREFIX}}`, `{{Prefix}}`, `{{prefix}}`, `{{PLUGIN_NAME}}`, `{{plugin-slug}}` placeholders.
+
+Finish with a scratchpad: files created, standards applied, gate results, open items.

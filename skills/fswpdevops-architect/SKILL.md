@@ -1,10 +1,10 @@
 ---
 name: fswpdevops-architect
-description: Planning stage of Full-Stack WP DevOps. Classifies the work (new plugin, new theme, update to an existing plugin or theme, add-on for another product, or WordPress Core patch), triages existing code with a bundled detection script, asks one round of essential questions, does competitive research, and produces one reviewable PRD or change brief with a single approval gate. Also covers Migration mode and multi-session handoff docs. Invoked by fswpdevops before any code is written; consult directly for PRD, change-brief, or handoff-doc questions.
+description: Planning stage of Full-Stack WP DevOps. Classifies the work (new plugin, new theme, update to an existing plugin or theme, add-on for another product, or WordPress Core patch), triages existing code with a bundled detection script, asks one round of essential questions, does competitive research, and produces one reviewable PRD or change brief with a single approval gate. Also covers Migration mode and multi-session handoff docs. Invoked by fswpdevops before any code is written; use directly for PRD, change-brief, or handoff-doc questions.
 license: MIT
 metadata:
   displayName: "FSWPDevOps Architect"
-  version: "0.5.0"
+  version: "0.5.1"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -85,3 +85,5 @@ When the build will span sessions, write both files into the plugin repo root (n
 - `HANDOFF.md`: current state; code map (file: responsibility); **verified / not-verified table** (each PRD scenario with PASS / FAIL / NOT RUN and evidence); open items; next step.
 
 Update both at every stop, and before ending any session that did not finish.
+
+Finish with a scratchpad: work type, answers, PRD or change-brief path, approval status.

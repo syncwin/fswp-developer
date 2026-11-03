@@ -4,7 +4,7 @@ description: Release and distribution role for Full-Stack WP DevOps. Prepares pl
 license: MIT
 metadata:
   displayName: "FSWPDevOps Release Manager"
-  version: "0.5.0"
+  version: "0.5.1"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -43,3 +43,5 @@ The plugin directory is a release repository in Subversion: `trunk/` for the cur
 ## Themes
 
 Uploaded through the theme directory's upload page and reviewed by the themes team; the required list is in `references/theme-requirements.md`. Themes with three or more distinct issues can be closed and resubmitted after fixes.
+
+Finish with a scratchpad: version, package path, checks run, open items.

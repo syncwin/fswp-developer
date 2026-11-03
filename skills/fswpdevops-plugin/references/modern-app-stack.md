@@ -1,5 +1,7 @@
 # Admin UI, Tier 3 — Modern App Stack (React SPA + Tailwind)
 
+Contents: Dependency policy — always install latest from the official registry; Decision checklist — confirm before choosing this tier; 1. Plugin foundation (unchanged); 2. Admin UI architecture; 2b. Two-surface apps (one bundle in wp-admin and in a shortcode); 3. Styling methodology; 4. Design tokens; 5. Data layer & background jobs; 6. Frontend build tooling; 7. Common frontend libraries; 8. Security baseline; 9. Accessibility; 10. Testing discipline; 11. Monorepo (if building multiple related products); 12. Source in the zip; Licensing note (ties into `references/i18n-distribution.md`).
+
 `references/admin-ui.md` covers two tiers: native wp-admin (Settings
 API / `WP_List_Table`) as the default, and `@wordpress/components` +
 `wp.element` for a single screen that needs real interactivity. This

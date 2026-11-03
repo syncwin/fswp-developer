@@ -1,17 +1,15 @@
 ---
 name: fswpdevops-core
-description: WordPress Core contribution stage of Full-Stack WP DevOps. Guides a contributor through finding or filing a Trac ticket, setting up the wordpress-develop checkout and test environment, writing a patch or GitHub pull request that follows Core coding standards, inline documentation, backward compatibility and tests, and preparing the ticket comment; also routes block-editor changes to the Gutenberg repository and security reports to the private process. Invoked by fswpdevops for Core patches; consult directly for Core workflow questions.
+description: WordPress Core contribution stage of Full-Stack WP DevOps. Guides a contributor through finding or filing a Trac ticket, setting up the wordpress-develop checkout and test environment, writing a patch or GitHub pull request that follows Core coding standards, inline documentation, backward compatibility and tests, and preparing the ticket comment; also routes block-editor changes to the Gutenberg repository and security reports to the private process. Invoked by fswpdevops for Core patches; use directly for Core workflow questions.
 license: MIT
 metadata:
   displayName: "FSWPDevOps Core Contributor"
-  version: "0.5.0"
+  version: "0.5.1"
   author: "@wasimness"
   company: "SyncWin"
 ---
 
 # FSWPDevOps Core Contributor
-
-**Foundational (always applied):** `fswpdevops/references/lean-coding.md` (write less, reuse first), `fswpdevops/references/coding-standards.md` (coding standards, docs, i18n, accessibility), and `fswpdevops-security` (input, output, authorization).
 
 Workflow facts here were checked against the Core Contributor Handbook on 2026-09-28. Core processes change; confirm anything time-sensitive in `fswpdevops/references/official-docs.md` before advising. Nothing here submits anything: the user files tickets and opens pull requests themselves (GitHub automation is reserved, see `fswpdevops/references/github-foundation.md`).
 
@@ -59,3 +57,5 @@ Use the development checkout, not a normal site:
 ## Verify before handing over
 
 Run `fswpdevops-qa` with the Core checklist: reproduction fails before and passes after, the relevant test group passes, coding standards are clean on changed lines, docs are present, and BC is intact.
+
+Finish with a scratchpad: ticket, patch path, tests run, open items.

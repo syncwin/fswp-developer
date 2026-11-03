@@ -1,5 +1,7 @@
 # REST API Endpoints & Cron/Background Jobs
 
+Contents: REST API routes; Cron / scheduled & background jobs.
+
 ## REST API routes
 
 ```php

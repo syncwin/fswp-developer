@@ -4,7 +4,7 @@ description: Shared WordPress security baseline for Full-Stack WP DevOps. The ru
 license: MIT
 metadata:
   displayName: "FSWPDevOps Security Engineer"
-  version: "0.5.0"
+  version: "0.5.1"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -58,3 +58,5 @@ Escape values you built yourself too. Never rely on "it was sanitized when saved
 ## Depth
 
 `references/security.md` holds the house rules that go beyond this table (JSON blob routes with size caps, versioned data envelopes, storing sensitive settings, lifecycle safety). Official documentation: the security sections of the Plugin Handbook and the Common APIs handbook (`fswpdevops/references/official-docs.md`). To report a vulnerability in WordPress itself, use the private security process linked from the Core Contributor Handbook, never a public ticket.
+
+Finish with a scratchpad: surfaces checked, findings, fixes, open items.

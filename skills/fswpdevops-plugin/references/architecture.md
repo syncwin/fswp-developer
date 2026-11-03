@@ -1,5 +1,7 @@
 # Architecture — Folder Anatomy, Naming, Lifecycle
 
+Contents: Plugin folder anatomy; Naming/prefix derivation table; Bootstrap file (`{plugin-slug}.php`); Lifecycle: activate / deactivate / uninstall — know the difference; Main plugin class — composition root, not a god object.
+
 ## Plugin folder anatomy
 
 ```

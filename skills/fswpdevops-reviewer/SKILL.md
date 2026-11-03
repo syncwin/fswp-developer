@@ -1,10 +1,10 @@
 ---
 name: fswpdevops-reviewer
-description: Independent review stage of Full-Stack WP DevOps. Reviews a finished WordPress plugin, theme, add-on, or Core patch through a security lens (WordPress-specific vulnerabilities, REST and AJAX authorization with an API risk map, AI-generated-code risks), a quality lens (error handling, data and upgrade safety, performance, i18n, accessibility, comment accuracy, test gaps, class and type design, scope), and an optional lean lens for trimming over-engineering, reporting only high-confidence findings in a fixed format. Invoked by fswpdevops after the verify gate, normally through the fswpdevops-code-reviewer agent; consult directly to review or optimize any WordPress code.
+description: Independent review stage of Full-Stack WP DevOps. Reviews a finished WordPress plugin, theme, add-on, or Core patch through a security lens (WordPress-specific vulnerabilities, REST and AJAX authorization with an API risk map, AI-generated-code risks), a quality lens (error handling, data and upgrade safety, performance, i18n, accessibility, comment accuracy, test gaps, class and type design, scope), and an optional lean lens for trimming over-engineering, reporting only high-confidence findings in a fixed format. Invoked by fswpdevops after the verify gate, normally through the fswpdevops-code-reviewer agent; use directly to review or optimize any WordPress code.
 license: MIT
 metadata:
   displayName: "FSWPDevOps Reviewer"
-  version: "0.5.0"
+  version: "0.5.1"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -38,3 +38,5 @@ Security/quality: one final line, `ship` or `fix first`, with the Critical and I
 ## Independence
 
 This skill never reads the build transcript. In Claude Code the `fswpdevops-code-reviewer` agent enforces that. Without agents, disclose the run as a self-review.
+
+Finish with a scratchpad: lens, findings by severity, fixes applied, open items.

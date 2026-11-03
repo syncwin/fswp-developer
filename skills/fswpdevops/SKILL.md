@@ -4,7 +4,7 @@ description: Full-Stack WP DevOps - the entry point and router for the whole Wor
 license: MIT
 metadata:
   displayName: "Full-Stack WP DevOps"
-  version: "0.5.0"
+  version: "0.5.1"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -84,3 +84,5 @@ External workflows may rely on these; they change only with an old-to-new mappin
 | `references/coding-standards.md`, `references/i18n.md`, `references/accessibility.md` | Foundational: how code is written |
 | `references/brand-naming.md` | The `sw` brand-acronym rule and its exceptions |
 | `references/github-foundation.md` | Reserved GitHub integration points (not implemented) |
+
+Finish with a scratchpad: request, work type, decisions, gate results, open items.

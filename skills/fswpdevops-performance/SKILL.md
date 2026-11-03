@@ -4,7 +4,7 @@ description: Domain skill for WordPress performance in Full-Stack WP DevOps. Cov
 license: MIT
 metadata:
   displayName: "FSWPDevOps Performance Engineer"
-  version: "0.5.0"
+  version: "0.5.1"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -55,3 +55,5 @@ Reserve space for late content (CLS), keep main-thread JS small (INP), avoid lay
 ## Report
 
 State the metric, method, before, after, and the trade-off. If it was not measured, say "not measured".
+
+Finish with a scratchpad: measurements before and after, changes, open items.

@@ -4,14 +4,12 @@ description: Theme build stage of Full-Stack WP DevOps. Builds custom WordPress 
 license: MIT
 metadata:
   displayName: "FSWPDevOps Theme Developer"
-  version: "0.5.0"
+  version: "0.5.1"
   author: "@wasimness"
   company: "SyncWin"
 ---
 
 # FSWPDevOps Theme Developer
-
-**Foundational (always applied):** `fswpdevops/references/lean-coding.md` (write less, reuse first), `fswpdevops/references/coding-standards.md` (coding standards, docs, i18n, accessibility), and `fswpdevops-security` (input, output, authorization).
 
 Executes an approved theme PRD (`fswpdevops-architect`). A theme controls presentation. Features that must survive a theme switch (post types, integrations, business logic) belong in a plugin (`fswpdevops-plugin`); say so instead of hiding them in `functions.php`.
 
@@ -51,3 +49,5 @@ Enqueue the parent stylesheet and the child stylesheet with correct dependencies
 ## Deliver
 
 Installable `{theme-slug}.zip` with the theme folder at the root, `readme.txt`, `screenshot.png` (at most 1200x900, 4:3 ratio), license notes for every bundled asset, and a summary of manual steps owed. References: `references/block-theme.md`, `references/theme-i18n-a11y.md`.
+
+Finish with a scratchpad: templates and parts built, tokens, gate results, open items.

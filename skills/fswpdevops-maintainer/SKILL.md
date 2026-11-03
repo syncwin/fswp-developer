@@ -1,17 +1,15 @@
 ---
 name: fswpdevops-maintainer
-description: Change stage for existing WordPress code in Full-Stack WP DevOps. Updates, fixes, refactors, and upgrades existing plugins and themes without breaking them, and builds add-ons for products you do not own (WooCommerce extensions, page-builder elements, extensions of other plugins) using hooks instead of edits to third-party files. Covers reading before changing, parity lists, deprecation, host compatibility, upgrade paths, and patch delivery. Invoked by fswpdevops after an approved change brief; consult directly for safe-change or add-on questions.
+description: Change stage for existing WordPress code in Full-Stack WP DevOps. Updates, fixes, refactors, and upgrades existing plugins and themes without breaking them, and builds add-ons for products you do not own (WooCommerce extensions, page-builder elements, extensions of other plugins) using hooks instead of edits to third-party files. Covers reading before changing, parity lists, deprecation, host compatibility, upgrade paths, and patch delivery. Invoked by fswpdevops after an approved change brief; use directly for safe-change or add-on questions.
 license: MIT
 metadata:
   displayName: "FSWPDevOps Maintainer"
-  version: "0.5.0"
+  version: "0.5.1"
   author: "@wasimness"
   company: "SyncWin"
 ---
 
 # FSWPDevOps Maintainer
-
-**Foundational (always applied):** `fswpdevops/references/lean-coding.md` (write less, reuse first), `fswpdevops/references/coding-standards.md` (coding standards, docs, i18n, accessibility), and `fswpdevops-security` (input, output, authorization).
 
 The existing code is the specification. Executes an approved change brief from `fswpdevops-architect` (which already ran `detect_wp_project.py`). Follow the project's own conventions unless they are unsafe; house templates are for new projects, not for rewriting someone else's style.
 
@@ -45,3 +43,5 @@ An add-on is a separate plugin (or a small theme layer) that extends a host. Str
 ## Verify
 
 Hand to `fswpdevops-qa` with the change brief's parity list and compatibility table as the scenario source. `references/safe-change-checklist.md` is the quick pre-delivery list.
+
+Finish with a scratchpad: baseline gate, change made, gate after, open items.

@@ -1,5 +1,7 @@
 # Public-Facing Output — Reusing the Atomic Framework
 
+Contents: Key structural point: a plugin owns and enqueues its own assets; Shortcode with conditional, properly-enqueued assets; Fonts and remote assets; Units and accessibility; JS tier decision: mechanical checklist, not judgment; When NOT to reuse the Atomic Framework here.
+
 Confirmed default: front-end output (shortcodes, blocks, widgets this
 plugin renders on the site for visitors) reuses the **Atomic Framework** (`afw-tokens.css`, `afw-components.css`,
 `afw-foundation-logics.js`, supplied by the user) for visual/

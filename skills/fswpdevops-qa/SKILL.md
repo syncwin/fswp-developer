@@ -1,10 +1,10 @@
 ---
 name: fswpdevops-qa
-description: Verification stage of Full-Stack WP DevOps. Runs the mechanical gate for plugins and themes (house-rule scripts, PHP lint, PHPCS with WordPress standards, PHP compatibility, PHPStan with WordPress stubs), the manual checklist, PRD or change-brief scenario tests, and the pre-release check. Reports PASS, FAIL, or NOT RUN and never implies a skipped check passed. Invoked by fswpdevops after a build and again before delivery; consult directly to audit any plugin or theme folder.
+description: Verification stage of Full-Stack WP DevOps. Runs the mechanical gate for plugins and themes (house-rule scripts, PHP lint, PHPCS with WordPress standards, PHP compatibility, PHPStan with WordPress stubs), the manual checklist, PRD or change-brief scenario tests, and the pre-release check. Reports PASS, FAIL, or NOT RUN and never implies a skipped check passed. Invoked by fswpdevops after a build and again before delivery; use directly to audit any plugin or theme folder.
 license: MIT
 metadata:
   displayName: "FSWPDevOps QA Engineer"
-  version: "0.5.0"
+  version: "0.5.1"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -64,3 +64,5 @@ After everything above is green: `references/release-check.md`.
 ## Output
 
 One table: check | PASS/FAIL/NOT RUN | detail. Then FAIL list with file and line, then what the user must run themselves. For multi-session builds, copy the table into `HANDOFF.md`.
+
+Finish with a scratchpad: the gate table, scope findings, skipped checks and why.

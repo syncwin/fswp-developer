@@ -4,7 +4,7 @@ description: Domain skill for WordPress development tooling in Full-Stack WP Dev
 license: MIT
 metadata:
   displayName: "FSWPDevOps DevOps Engineer"
-  version: "0.5.0"
+  version: "0.5.1"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -87,3 +87,5 @@ Install with Composer: `wp-coding-standards/wpcs`, `dealerdirect/phpcodesniffer-
 ## CI outline (reserved for GitHub work)
 
 The order a pipeline should follow: install, PHPCS, PHPStan, PHP tests on min and max PHP, JS lint/build/test, package, upload artifact. Do not create workflow files until the GitHub integration is switched on (`fswpdevops/references/github-foundation.md`).
+
+Finish with a scratchpad: workflows added or changed, checks run, open items.
