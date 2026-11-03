@@ -1,11 +1,12 @@
 ---
 name: fswp-developer
 description: Full-Stack WP Developer - the entry point and router for the whole WordPress development lifecycle. Use whenever the user wants to build a custom theme (block or classic) or plugin, update or fix an existing theme or plugin, create an add-on for another product (WooCommerce extension, page-builder element, plugin extension), contribute a patch to WordPress Core, or review, secure, optimize, or ship WordPress code; also when they invoke /fswp. Classifies the work, then sequences fswp-architect, a build skill (fswp-plugin-developer, fswp-theme-developer, fswp-maintainer, fswp-core-contributor), fswp-qa-engineer, and fswp-reviewer, backed by role skills for security, blocks, APIs, performance, tooling, and release, on top of the always-applied lean-coding and coding-standards references this skill owns. Not for single-shortcode FluentSnippets tools (that is wordpress-mini-app-builder).
+license: MIT
 metadata:
-  version: '0.4.3'
+  displayName: "Full-Stack WP Developer"
+  version: "0.4.4"
   author: "@wasimness"
-  company: SyncWin
-  license: MIT
+  company: "SyncWin"
 ---
 
 # FSWP Developer (router)

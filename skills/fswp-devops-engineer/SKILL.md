@@ -1,11 +1,12 @@
 ---
 name: fswp-devops-engineer
 description: Domain skill for WordPress development tooling in Full-Stack WP Developer. Covers local environments (wp-env with Docker, WordPress Playground and Blueprints), command-line site operations (plugin and theme management, database export, search-replace, cron, scaffolding), coding standards and static analysis (PHPCS with WordPress standards, PHPStan with WordPress stubs), PHP and JS testing setup, and the @wordpress/scripts toolchain. Use when setting up, running, or automating a WordPress dev or test environment.
+license: MIT
 metadata:
-  version: '0.4.3'
+  displayName: "FSWP DevOps Engineer"
+  version: "0.4.4"
   author: "@wasimness"
-  company: SyncWin
-  license: MIT
+  company: "SyncWin"
 ---
 
 # FSWP DevOps Engineer

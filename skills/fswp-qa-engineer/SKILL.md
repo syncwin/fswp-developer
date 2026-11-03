@@ -1,11 +1,12 @@
 ---
 name: fswp-qa-engineer
 description: Verification stage of Full-Stack WP Developer. Runs the mechanical gate for plugins and themes (house-rule scripts, PHP lint, PHPCS with WordPress standards, PHP compatibility, PHPStan with WordPress stubs), the manual checklist, PRD or change-brief scenario tests, and the pre-release check. Reports PASS, FAIL, or NOT RUN and never implies a skipped check passed. Invoked by fswp-developer after a build and again before delivery; consult directly to audit any plugin or theme folder.
+license: MIT
 metadata:
-  version: '0.4.3'
+  displayName: "FSWP QA Engineer"
+  version: "0.4.4"
   author: "@wasimness"
-  company: SyncWin
-  license: MIT
+  company: "SyncWin"
 ---
 
 # FSWP QA Engineer

@@ -1,11 +1,12 @@
 ---
 name: fswp-architect
 description: Planning stage of Full-Stack WP Developer. Classifies the work (new plugin, new theme, update to an existing plugin or theme, add-on for another product, or WordPress Core patch), triages existing code with a bundled detection script, asks one round of essential questions, does competitive research, and produces one reviewable PRD or change brief with a single approval gate. Also covers Migration mode and multi-session handoff docs. Invoked by fswp-developer before any code is written; consult directly for PRD, change-brief, or handoff-doc questions.
+license: MIT
 metadata:
-  version: '0.4.3'
+  displayName: "FSWP Architect"
+  version: "0.4.4"
   author: "@wasimness"
-  company: SyncWin
-  license: MIT
+  company: "SyncWin"
 ---
 
 # FSWP Architect

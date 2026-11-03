@@ -1,11 +1,12 @@
 ---
 name: fswp-plugin-developer
 description: Plugin build stage of Full-Stack WP Developer. House standards and code templates for real WordPress plugins (not shortcode snippets) - folder anatomy, activation/uninstall lifecycle, custom post types and tables, admin UI tiers, front-end output on the Atomic Framework, REST and cron, i18n, distribution, and the Tier 3 React admin stack - plus a scaffold script. Also the base structure for add-ons. Invoked by fswp-developer after an approved PRD; consult directly for a specific plugin build pattern.
+license: MIT
 metadata:
-  version: '0.4.3'
+  displayName: "FSWP Plugin Developer"
+  version: "0.4.4"
   author: "@wasimness"
-  company: SyncWin
-  license: MIT
+  company: "SyncWin"
 ---
 
 # FSWP Plugin Developer
