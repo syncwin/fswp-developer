@@ -4,14 +4,12 @@ description: Domain skill for WordPress block editor work in Full-Stack WP DevOp
 license: MIT
 metadata:
   displayName: "FSWPDevOps Block Developer"
-  version: "0.5.0"
+  version: "0.5.1"
   author: "@wasimness"
   company: "SyncWin"
 ---
 
 # FSWPDevOps Block Developer
-
-**Foundational (always applied):** `fswpdevops/references/lean-coding.md` (write less, reuse first), `fswpdevops/references/coding-standards.md` (coding standards, docs, i18n, accessibility), and `fswpdevops-security` (input, output, authorization).
 
 Use core blocks first; write a custom block only when core blocks and patterns cannot express the requirement. Official references: Block Editor Handbook links in `fswpdevops/references/official-docs.md`. Check the minimum WordPress version for each API against the project's declared minimum.
 
@@ -72,3 +70,5 @@ Server-rendered markup plus small reactive behavior, no framework needed.
 ## Build and test
 
 `npx @wordpress/create-block` for a starting point; `@wordpress/scripts` for `build`, `start`, `lint-js`, `lint-style`, `test-unit-js`. Ship the built files together with `src/`, `package.json`, and the lockfile (directory rule for compiled code). Test in the editor (insert, edit, save, reload, switch to code view) and on the front end. Hand to `fswpdevops-qa`.
+
+Finish with a scratchpad: blocks built, attributes, gate results, open items.

@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.5.1] - 2026-11-03
+### Fixed
+Cleared all 30 validator warnings: a "use" cue in six stage descriptions, a closing scratchpad line in every skill, contents lists in the long plugin and security references, and the foundational-rules line now lives only in the router.
+
 ## [0.5.0] - 2026-11-03
 ### Changed (breaking: plugin and skill names)
 Renamed to **Full-Stack WP DevOps** (`fswpdevops`, trigger `/fswpdevops`), matching Full-Stack DevOps (`fsdevops`). Repository `syncwin/fswpdevops` (the old URL redirects); marketplace `syncwin-fswpdevops`. Every skill starts with the router name, so typing `fswpdevops` lists them all.

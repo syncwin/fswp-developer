@@ -1,5 +1,7 @@
 # Internationalization & Distribution
 
+Contents: i18n — wrap every user-facing string, always; Distribution target: WordPress.org public repo; Distribution target: private / client plugin; Versioning discipline (either target).
+
 ## i18n — wrap every user-facing string, always
 
 ```php

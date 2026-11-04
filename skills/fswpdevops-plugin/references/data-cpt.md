@@ -1,5 +1,7 @@
 # Custom Post Types, Taxonomies & Custom Database Tables
 
+Contents: Custom Post Type; Custom database table.
+
 Pick the right storage for the data, don't default to custom tables
 just because they feel "more real":
 

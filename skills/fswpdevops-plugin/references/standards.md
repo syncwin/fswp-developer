@@ -1,5 +1,7 @@
 # Standards: versioning, tech stack, code quality, documentation
 
+Contents: 1. Versioning and changelog discipline; 2. Technology stack; 3. Required project information; 4. Feature documentation; 5. Code quality; 6. Quality bar (applies to everything built or written — code, docs, PRDs, changelogs, readme, admin copy); 7. Minimal-code discipline.
+
 House-wide rules that apply to every plugin build, update, and iteration — not just first builds. `fswpdevops-architect` collects the inputs these rules need; `fswpdevops-plugin` applies them; `fswpdevops-qa` checks them.
 
 ## 1. Versioning and changelog discipline

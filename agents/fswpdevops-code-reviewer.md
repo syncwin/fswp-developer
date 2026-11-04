@@ -7,7 +7,7 @@ skills:
 license: MIT
 metadata:
   displayName: "FSWPDevOps Code Reviewer"
-  version: "0.5.0"
+  version: "0.5.1"
   author: "@wasimness"
   company: "SyncWin"
 ---

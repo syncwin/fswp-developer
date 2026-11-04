@@ -1,5 +1,7 @@
 # Admin UI — WP-Native Styling
 
+Contents: Menu registration; Settings API (for a settings page — don't hand-roll form handling); List/manage screens: `WP_List_Table`; Icons & visual language; When the admin UI needs to be genuinely React-driven: `@wordpress/components` + `wp.element`.
+
 Confirmed default: admin screens use **WordPress's own admin
 conventions**, not the Atomic Framework. Reasons this is the right
 default, not just a stylistic preference: wp-admin gets its own core

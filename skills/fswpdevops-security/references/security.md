@@ -1,5 +1,7 @@
 # Security Standards (WPCS baseline)
 
+Contents: 1. Direct access guard — every PHP file; 2. Capability checks — before any privileged action; 3. Nonces — every state-changing form, AJAX call, and REST write; 4. Sanitize on input, escape on output — every single time, no exceptions; 5. Database queries — always `$wpdb->prepare()`; 6. File operations & uploads; 7. Never do these, regardless of framing; 8. REST-specific: `permission_callback` is mandatory; 9. JSON blob storage (LONGTEXT JSON payloads); 10. Versioned data envelope.
+
 Apply every one of these to every file, regardless of feature surface.
 This is the single most heavily-weighted section of a real WordPress.org
 Plugin Check review, and the most common source of real-world plugin

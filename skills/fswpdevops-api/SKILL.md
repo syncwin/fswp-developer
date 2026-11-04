@@ -4,14 +4,12 @@ description: Domain skill for WordPress REST API and Abilities API work in Full-
 license: MIT
 metadata:
   displayName: "FSWPDevOps API Developer"
-  version: "0.5.0"
+  version: "0.5.1"
   author: "@wasimness"
   company: "SyncWin"
 ---
 
 # FSWPDevOps API Developer
-
-**Foundational (always applied):** `fswpdevops/references/lean-coding.md` (write less, reuse first), `fswpdevops/references/coding-standards.md` (coding standards, docs, i18n, accessibility), and `fswpdevops-security` (input, output, authorization).
 
 Official reference: REST API Handbook (`fswpdevops/references/official-docs.md`). Security rules in `fswpdevops-security` apply to every route.
 
@@ -74,3 +72,5 @@ When registering an ability:
 Audit and verification procedures: `references/abilities.md`.
 
 To propose which existing endpoints should become abilities, list each route with its method, current permission check, side effects, and a suggested annotation; do not register anything until approved.
+
+Finish with a scratchpad: endpoints or abilities touched, permission checks, open items.
