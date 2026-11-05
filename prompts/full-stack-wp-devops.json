@@ -37,7 +37,7 @@
           "type": "Textarea",
           "label": "Details",
           "placeholder": "Anything else: deadlines, names, examples, things to avoid.",
-          "context": "Everything the task needs that isn&#x27;t a file.",
+          "context": "Everything the task needs that isn't a file.",
           "maxLength": 2000,
           "required": false,
           "options": ""
