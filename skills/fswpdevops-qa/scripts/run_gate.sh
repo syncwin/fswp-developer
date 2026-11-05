@@ -6,6 +6,8 @@ set -uo pipefail
 D="${1:?plugin dir}"; MINPHP="${2:-7.4}"; FIX=0; for a in "$@"; do [ "$a" = "--fix" ] && FIX=1; done; [ "$MINPHP" = "--fix" ] && MINPHP=7.4
 T="${FSWP_TOOLS:-$HOME/.fswp-tools}"; HERE="$(cd "$(dirname "$0")" && pwd)"
 rows=(); fail=0
+# Pick a working Python (the Windows Store python3 stub exists but does not run).
+PY=""; for c in python3 python "py -3"; do if $c -c 'import sys' >/dev/null 2>&1; then PY="$c"; break; fi; done
 sha() { if command -v sha256sum >/dev/null 2>&1; then sha256sum "$1" | cut -d' ' -f1; else shasum -a 256 "$1" | cut -d' ' -f1; fi; }
 # Fail closed: a phar only runs when it matches the SHA-256 pinned in the repo's toolchain.lock (never a file next to the binary).
 # A phar that is present but unverified (missing/mismatched checksum) FAILS the gate; an absent tool stays NOT RUN.
@@ -14,11 +16,11 @@ if [ "$FIX" = 1 ] && command -v php >/dev/null 2>&1 && okphar phpcbf.phar; then 
 row() { rows+=("$1|$2|$3"); if [ "$2" = FAIL ]; then fail=1; fi; return 0; }
 
 if [ -f "$D/style.css" ] && grep -qi "Theme Name:" "$D/style.css"; then CHK=theme_check.py; LABEL="theme_check.py (house rules)"; else CHK=qa_check.py; LABEL="qa_check.py (house rules)"; fi
-out=$(python3 "$HERE/$CHK" "$D" 2>&1); rc=$?
+if [ -z "$PY" ]; then out="no working python (python3, python, py -3)"; rc=1; else out=$($PY "$HERE/$CHK" "$D" 2>&1); rc=$?; fi
 [ $rc -eq 0 ] && row "$LABEL" PASS "$(printf '%s' "$out" | tail -1)" || row "$LABEL" FAIL "$(printf '%s' "$out" | grep '^\[FAIL\]' | head -3 | tr -d '\r' | tr '\n' ';')"
 
 # Documentation standard (docs_gate.py): README + docs, CHANGELOG [Unreleased], docs/features index and files. Diff checks need git + a base branch.
-out=$(python3 "$HERE/docs_gate.py" "$D" 2>&1); rc=$?
+if [ -z "$PY" ]; then out="docs_gate.py NOT RUN: no working python"; rc=0; else out=$($PY "$HERE/docs_gate.py" "$D" 2>&1); rc=$?; fi
 dg=$(printf '%s' "$out" | grep -E ' (FAIL|NOT RUN) ' | head -3 | tr -d '\r' | sed 's/  */ /g' | tr '\n' ';')
 if [ $rc -ne 0 ]; then row "docs_gate.py (documentation standard)" FAIL "$dg"
 elif printf '%s' "$out" | grep -q ' NOT RUN '; then row "docs_gate.py (documentation standard)" "NOT RUN" "static checks passed; $dg"

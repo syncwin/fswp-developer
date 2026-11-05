@@ -213,7 +213,12 @@ def run(root):
         any(re.search(r"add_shortcode|register_rest_route|register_post_type", t) for t in src.values())
     docs_dir = os.path.join(root, "docs", "features")
     if has_features:
-        if not os.path.isdir(docs_dir):
+        legacy_dir = os.path.join(root, "docs")
+        legacy = [f for f in os.listdir(legacy_dir) if f.endswith(".md") and f not in ("README.md", "setup.md", "architecture.md", "ops.md")] if os.path.isdir(legacy_dir) and not os.path.isdir(docs_dir) else []
+        if legacy:
+            add("WARN", "docs/features/ feature documentation present",
+                "legacy docs/<feature>.md found (" + ", ".join(sorted(legacy)[:4]) + "): move with 'git mv docs/<f>.md docs/features/' and add the index and template")
+        elif not os.path.isdir(docs_dir):
             add("FAIL", "docs/features/ feature documentation present", "no docs/features/ folder found (scaffold generates stubs; they were removed or build skipped them)")
         else:
             doc_files = [f for f in os.listdir(docs_dir) if f.endswith(".md") and f != "README.md"]

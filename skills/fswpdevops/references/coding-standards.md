@@ -104,7 +104,7 @@ Text description, no screenshots needed: layout, controls, states.
 ## History
 - X.Y.Z: one-line change
 ```
-- **When code changes** (any plugin or theme PHP, JS/TS under `src/` or `blocks/`, block-theme templates, parts, `theme.json`): add a line under `## [Unreleased]`; update the feature file of every touched feature (body, `Updated`, a History line) and the index row if Status or Since changed; add file + index row for a new feature. Shared code (files directly in `includes/`, `admin/`, the main plugin file) needs the changelog line only.
+- **When code changes** (any plugin or theme PHP, JS/TS under `src/` or `blocks/`, block-theme templates, parts, `theme.json`): add a line under `## [Unreleased]`; update the feature file of every touched feature (body, `Updated`, a History line) and the index row if Status or Since changed; add file + index row for a new feature. Shared code (files directly in `includes/`, `admin/`, the main plugin file) needs the changelog line only. Pure refactors skip the feature-file update: a new `### Changed` line or a line containing `docs: none` under `[Unreleased]` waives it (the changelog line is still required).
 - **Release** (`fswpdevops-release`): `[Unreleased]` becomes `## [X.Y.Z] - date`, a fresh empty `[Unreleased]` stays on top; header `Version`, version constant, `Stable tag` and `readme.txt` changelog move together.
 - **Evidence for AI+ contract adoption** (no `contract.yaml` here yet): `changelog_unreleased_updated`, `feature_docs_updated`, `feature_index_current`, `docs_gate_exit_code` = the rows and exit code of `docs_gate.py`.
 

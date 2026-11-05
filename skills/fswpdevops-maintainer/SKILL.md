@@ -42,7 +42,7 @@ An add-on is a separate plugin (or a small theme layer) that extends a host. Str
 
 ## Verify
 
-Docs move in the same change as the code (`fswpdevops/references/coding-standards.md`, Documentation standard): an `[Unreleased]` line, the touched feature files, the index.
+Docs move in the same change as the code (`fswpdevops/references/coding-standards.md`, Documentation standard): an `[Unreleased]` line, the touched feature files, the index. Migrating an older project: `git mv docs/<feature>.md docs/features/`, add `docs/features/README.md` and the template headings (`qa_check.py` WARNs on the legacy layout until then). A pure refactor needs only a `### Changed` or `docs: none` line under `[Unreleased]`.
 
 Hand to `fswpdevops-qa` with the change brief's parity list and compatibility table as the scenario source. `references/safe-change-checklist.md` is the quick pre-delivery list.
 

@@ -5,7 +5,8 @@ Usage: python docs_gate.py <dir> [--base REF] [--static]
 Checks the documentation standard (fswpdevops/references/coding-standards.md, "Documentation standard"):
   static: README.md, docs/{setup,architecture,ops}.md, CHANGELOG.md format, docs/features/ index and files.
   diff:   code changed against the base without a CHANGELOG [Unreleased] entry, or without a changed
-          feature file for the touched feature, FAILS. Base = --base, else origin/main, origin/master, main, master.
+          feature file for the touched feature, FAILS
+          (waived by a new [Unreleased] '### Changed' line or a line containing 'docs: none'). Base = --base, else origin/main, origin/master, main, master.
 Prints PASS / FAIL / NOT RUN per check; exit 1 if any FAIL. NOT RUN (no git, no base) is never a pass.
 """
 import argparse
@@ -72,6 +73,19 @@ def unreleased(text):
 
 def body_lines(section):
     return {l.strip() for l in section.splitlines() if l.strip() and not l.lstrip().startswith("#")}
+
+
+def added_entries(new_u, old_u):
+    """(category, line) pairs added under [Unreleased] versus the base."""
+    old = body_lines(old_u) if old_u else set()
+    cat, out = None, []
+    for l in (new_u or "").splitlines():
+        s = l.strip()
+        if s.startswith("### "):
+            cat = s[4:].strip()
+        elif s and not s.startswith("#") and s not in old:
+            out.append((cat, s))
+    return out
 
 
 def static_checks(root, add):
@@ -200,6 +214,10 @@ def diff_checks(root, add, want_base):
         if s and s not in GENERIC:
             slugs.setdefault(s, []).append(f)
     name = "feature docs for touched features"
+    waiver = [e for e in added_entries(nu, ou) if e[0] == "Changed" or "docs: none" in e[1].lower()]
+    if slugs and waiver:
+        add("PASS", name, "waived: [Unreleased] has a '### Changed' or 'docs: none' line (refactor, no feature-doc change)")
+        return
     if not slugs:
         add("PASS", name, "no feature-scoped code touched (shared code needs the changelog only)")
         return
