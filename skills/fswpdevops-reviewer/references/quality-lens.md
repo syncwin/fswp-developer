@@ -54,6 +54,7 @@ Behavior with real branching (parsing, permissions, migrations) shipped with no 
 - Missing `@since`, `@param`, `@return` on new public functions and hooks (per `fswpdevops/references/coding-standards.md`).
 - Comments that restate the code without adding a reason; TODOs with no owner or trigger; commented-out code left behind.
 - User-facing docs (readme, `docs/`) that claim behavior the code does not have.
+- Docs out of step with the change (`fswpdevops/references/coding-standards.md`, Documentation standard): no `[Unreleased]` line, touched feature file or index row not updated, a feature file that cannot be understood without the code.
 
 ## 9. Test coverage gaps
 

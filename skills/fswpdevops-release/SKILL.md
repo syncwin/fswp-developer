@@ -4,7 +4,7 @@ description: Release and distribution role for Full-Stack WP DevOps. Prepares pl
 license: MIT
 metadata:
   displayName: "FSWPDevOps Release Manager"
-  version: "0.5.2"
+  version: "0.5.3"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -24,7 +24,7 @@ The published rules are authoritative and change; the summaries here were checke
 ## Release checklist (all targets)
 
 1. Version bumped everywhere it lives: main file header, version constant, `readme.txt` Stable tag (plugins) or `style.css` Version (themes), `package.json`, changelog.
-2. Changelog entry written for users, not commit noise.
+2. `CHANGELOG.md`: move `[Unreleased]` into `## [X.Y.Z] - date` (fresh empty `[Unreleased]` on top), written for users, not commit noise; feature files and index match X.Y.Z; `readme.txt` changelog mirrors released sections. Pre-1.0 = beta; `1.0.0` only when the owner says. Standard: `fswpdevops/references/coding-standards.md`.
 3. `fswpdevops-qa` gate and release check are green; every NOT RUN item is listed for the user. **Security gate:** reviewer security lens has no Critical or Important findings, secret scan and dependency audit ran (or are listed NOT RUN), `fswpdevops-security` §Secure by default is satisfied.
 4. License headers present and every bundled asset's license documented (fonts, images, libraries).
 5. No development files in the zip: no `.git`, `node_modules`, tests, editor configs, `.sh` or `.xml` files in themes, zip files inside the package. Compiled assets ship with their source and build steps.

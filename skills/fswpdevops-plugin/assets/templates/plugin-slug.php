@@ -3,7 +3,7 @@
  * Plugin Name:       {{PLUGIN_NAME}}
 {{PLUGIN_URI_LINE}}
  * Description:       {{ONE_LINE_DESCRIPTION}}
- * Version:           0.1.0
+ * Version:           0.0.1
  * Requires at least: 6.4
  * Requires PHP:      7.4
  * Author:            {{AUTHOR}}
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Block direct access.
 }
 
-define( '{{PREFIX}}_VERSION', '0.1.0' );
+define( '{{PREFIX}}_VERSION', '0.0.1' );
 define( '{{PREFIX}}_PLUGIN_FILE', __FILE__ );
 define( '{{PREFIX}}_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( '{{PREFIX}}_PLUGIN_URL', plugin_dir_url( __FILE__ ) );

@@ -41,11 +41,11 @@ Items marked (auto) are enforced by `qa_check.py`; confirm the script passed, do
 - [ ] Tier 3 only: two-surface overlay test passes; CI runs lint, axe, tests, `bun audit`; source ships in the zip (auto).
 
 ## Standards (fswpdevops-plugin references/standards.md)
-- [ ] Changelog: this iteration's changes landed in the **latest existing entry**, not a new one, unless the change genuinely justifies a version bump (new feature = MINOR, fix = PATCH, breaking = MAJOR). No duplicate lines describing the same change.
+- [ ] Changelog: this iteration's changes are lines under `## [Unreleased]` (auto: `docs_gate.py`); a version bump happens only at a release (new feature = MINOR, fix = PATCH, breaking = MAJOR). No duplicate lines describing the same change.
 - [ ] If the version was bumped: header `Version`, the version constant, and `readme.txt` Stable tag all moved together (auto, `qa_check.py`), and a new changelog entry was opened for it.
 - [ ] Technology stack unchanged from the prior iteration unless a stated reason justified the change (industry standard conflict, technical constraint, requirement change) — check the PRD's section 1b against what was actually built.
 - [ ] No invented project metadata: every header/readme/about-screen field traces to something the user stated; anything unstated is absent, not a placeholder.
-- [ ] `docs/` has an entry for every feature the PRD lists, each covering what applies from: what it does, how it works, inputs, outputs, dependencies, constraints. Updated for any feature this iteration touched, not just new ones. (auto: presence and stub completion (no `FILL IN:` left) are both checked by `qa_check.py`; only the actual quality of the filled content needs a human read.)
+- [ ] `docs/features/` has a file for every feature the PRD lists, in the standard template (Context, Behaviour, How it works, UI, Limits & known issues, History), the index table current, and every touched feature updated, not just new ones. (auto: `docs_gate.py` and `qa_check.py` check presence, template, index and no `FILL IN:` left; only the quality of the filled content needs a human read.)
 
 ## Distribution
 - [ ] WordPress.org target: `readme.txt` valid, Stable tag matches (auto), GPL-compatible, no remote code, no undisclosed phone-home; `fswpdevops-release` consulted.

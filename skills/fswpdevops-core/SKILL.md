@@ -4,7 +4,7 @@ description: WordPress Core contribution stage of Full-Stack WP DevOps. Guides a
 license: MIT
 metadata:
   displayName: "FSWPDevOps Core Contributor"
-  version: "0.5.2"
+  version: "0.5.3"
   author: "@wasimness"
   company: "SyncWin"
 ---

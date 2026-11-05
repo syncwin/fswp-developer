@@ -43,6 +43,7 @@ follow the reference files in ../references/ for that; this just saves
 retyping the skeleton by hand.
 """
 import argparse
+import datetime
 import os
 import re
 import shutil
@@ -192,9 +193,10 @@ def main():
         for src, dst in FEATURE_FILES[feature]:
             generated.append(write_file(src, dst, ctx, args.out))
 
-    # Feature documentation stubs (references/standards.md section 4).
-    # Skeleton only — never invented content. fswpdevops-plugin fills each FILL IN: marker from
-    # the approved PRD before delivery; qa_check.py flags any FILL IN: marker left in.
+    # Documentation standard (fswpdevops/references/coding-standards.md): README.md, CHANGELOG.md at 0.0.1,
+    # docs/{setup,architecture,ops}.md and docs/features/ (index + one file per feature). Skeleton only -
+    # fswpdevops-plugin fills each FILL IN: marker from the approved PRD before delivery; docs_gate.py and
+    # qa_check.py fail on a FILL IN: marker left in a non-planned feature file.
     FEATURE_DOCS = {
         "cpt": ("Custom post type", "PRD section 5 (Data model)"),
         "db": ("Custom database table", "PRD section 5 (Data model)"),
@@ -203,49 +205,62 @@ def main():
         "admin": ("Admin experience", "PRD section 7 (Admin experience)"),
         "frontend": ("Front-end output", "PRD section 8 (Front-end experience)"),
     }
-    docs_dir = os.path.join(args.out, ctx["slug"], "docs")
-    if features:
-        os.makedirs(docs_dir, exist_ok=True)
-        index_lines = [f"# {ctx['plugin_name']} — feature documentation", "",
-                       "One file per feature. Fill every FILL IN: marker from the approved PRD before delivery.", ""]
-        for feature in sorted(features):
-            title, prd_ref = FEATURE_DOCS[feature]
-            index_lines.append(f"- [{title}]({feature}.md)")
-            doc_path = os.path.join(docs_dir, f"{feature}.md")
-            with open(doc_path, "w", encoding="utf-8") as fh:
-                fh.write(f"""# {title}
+    plugin_root = os.path.join(args.out, ctx["slug"])
 
-<!-- Stub: fill from {prd_ref} before delivery. Remove this comment once done. -->
+    def put(rel, text):
+        path = os.path.join(plugin_root, rel)
+        if os.path.exists(path):
+            return
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path, "w", encoding="utf-8", newline="\n") as fh:
+            fh.write(text)
+        generated.append(path)
 
-## What it does
+    name = ctx["plugin_name"]
+    put("README.md", f"# {name}\n\n{ctx['description']}\n\n## Install\n\nCopy the `{ctx['slug']}` folder to `wp-content/plugins/` and activate it.\n\n"
+        "More: [setup](docs/setup.md), [architecture](docs/architecture.md), [ops](docs/ops.md), "
+        "[features](docs/features/README.md), [changelog](CHANGELOG.md).\n")
+    put("CHANGELOG.md", "# Changelog\n\nFormat: [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.1.0/); versions: "
+        "[SemVer 2.0.0](https://semver.org/spec/v2.0.0.html). Pre-1.0 is beta.\n\n## [Unreleased]\n\n"
+        f"## [0.0.1] - {datetime.date.today().isoformat()}\n\n### Added\n- Initial scaffold ({', '.join(sorted(features)) or 'core'}).\n")
+    put("docs/setup.md", f"# Setup\n\n1. Use a local WordPress site.\n2. Put `{ctx['slug']}` in `wp-content/plugins/` and activate it.\n"
+        "3. Quality gate: `run_gate.sh` and `docs_gate.py` from the fswpdevops-qa skill.\n")
+    put("docs/architecture.md", f"# Architecture\n\n- Main file `{ctx['slug']}.php`; classes in `includes/`"
+        f"{', `admin/`' if 'admin' in features else ''}{', `public/`' if 'frontend' in features else ''}.\n"
+        "- Activation, deactivation and `uninstall.php` own all setup and cleanup.\n"
+        "- FILL IN: hooks, data (options, tables, meta) and extension points as they appear.\n")
+    put("docs/ops.md", "# Ops\n\n- Release: move `[Unreleased]` in CHANGELOG.md into the new version; header `Version`, version constant and readme `Stable tag` move together.\n"
+        "- Uninstall removes only plugin-owned data.\n- Troubleshooting: FILL IN as issues are found.\n")
+    rows = []
+    for feature in sorted(features):
+        title, prd_ref = FEATURE_DOCS[feature]
+        rows.append(f"| {title} | beta | 0.0.1 | [{feature}.md]({feature}.md) |")
+        put(f"docs/features/{feature}.md", f"""# {title}
 
-FILL IN: one or two sentences, plain language.
+**Status:** beta | **Since:** 0.0.1 | **Updated:** 0.0.1
+
+<!-- Stub: fill from {prd_ref} before delivery, then remove this comment. -->
+
+## Context
+FILL IN: why this feature exists and who uses it.
+
+## Behaviour
+FILL IN: what the user sees and does; states; edge cases; errors; permissions and capabilities.
 
 ## How it works
+FILL IN: flow, hooks, classes and files, data (options, tables, meta), APIs and routes, config.
 
-FILL IN: the mechanism — hooks used, data flow, key functions/classes.
+## UI
+FILL IN: text description of layout, controls and states (no screenshots needed). Write "None" for a feature with no UI.
 
-## Inputs
+## Limits & known issues
+None yet.
 
-FILL IN: settings, parameters, REST args, or shortcode attributes. Remove this heading if none apply.
-
-## Outputs
-
-FILL IN: what it renders, returns, or stores. Remove this heading if none apply.
-
-## Dependencies
-
-FILL IN: other features/classes it relies on, external services, the JS/admin tier it uses. Remove this heading if none apply.
-
-## Constraints
-
-FILL IN: capability required, rate limits, size caps, version requirements. Remove this heading if none apply.
+## History
+- 0.0.1: first version
 """)
-            generated.append(doc_path)
-        index_path = os.path.join(docs_dir, "README.md")
-        with open(index_path, "w", encoding="utf-8") as fh:
-            fh.write("\n".join(index_lines) + "\n")
-        generated.append(index_path)
+    put("docs/features/README.md", "# Features\n\nOne file per feature. Keep this table current (status, since version).\n\n"
+        "| Feature | Status | Since | File |\n|---|---|---|---|\n" + "\n".join(rows) + ("\n" if rows else ""))
 
     if "frontend" in features:
         if not args.foundation_dir:

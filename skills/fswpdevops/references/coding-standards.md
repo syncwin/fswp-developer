@@ -70,6 +70,44 @@ See `fswpdevops/references/accessibility.md`. Targets: WCAG 2.2 level AA for eve
 7. Respect `prefers-reduced-motion`; no autoplay motion; content reflows at 320px and works at 200% zoom.
 8. Live updates use `wp.a11y.speak()` (admin) or an appropriate live region.
 
+## Documentation standard (single source; other skills link here)
+
+Every plugin, theme, add-on or Core-patch project this plugin builds has these files from the first scaffold and keeps them current. A change that touches code updates the matching docs in the same change, never later. `fswpdevops-qa/scripts/docs_gate.py` enforces it.
+
+- **`README.md` + `docs/`**: short. `README.md` = what it is, install, link to `docs/`. `docs/setup.md` (install, dev environment, tests), `docs/architecture.md` (files, hooks, data, extension points), `docs/ops.md` (build, release, config, troubleshooting, uninstall). WordPress.org `readme.txt` stays as well; its `== Changelog ==` mirrors released sections of `CHANGELOG.md`.
+- **`CHANGELOG.md`**: Keep a Changelog 1.1.0 + Semantic Versioning 2.0.0. Starts at `0.0.1`. Top section `## [Unreleased]`; released sections `## [X.Y.Z] - YYYY-MM-DD`; categories only `### Added`, `### Changed`, `### Deprecated`, `### Removed`, `### Fixed`, `### Security`. One line per user-visible change, written for users. Pre-1.0 (`0.y.z`) = beta. `1.0.0` only when the owner says so.
+- **`docs/features/`**: one file per feature, `docs/features/<feature-slug>.md` (slug = lowercase, hyphens; the folder under `includes/`, `inc/`, `src/`, `modules/`, `features/` or `blocks/`), plus `docs/features/README.md`, an index table:
+
+  `| Feature | Status | Since | File |` (one row per feature; Status and Since equal the feature file's)
+
+- **Feature file template.** Lean, no fluff, ASCII only, understandable with no visual reference, so a new agent or user can learn the feature from it alone:
+
+```
+# <Title>
+
+**Status:** planned|beta|stable|deprecated | **Since:** X.Y.Z | **Updated:** X.Y.Z
+
+## Context
+Why it exists, who uses it.
+
+## Behaviour
+What the user sees and does; states; edge cases; errors; permissions and capabilities.
+
+## How it works
+Flow, hooks, classes and files, data (options, tables, meta), APIs and routes, config.
+
+## UI
+Text description, no screenshots needed: layout, controls, states.
+
+## Limits & known issues
+
+## History
+- X.Y.Z: one-line change
+```
+- **When code changes** (any plugin or theme PHP, JS/TS under `src/` or `blocks/`, block-theme templates, parts, `theme.json`): add a line under `## [Unreleased]`; update the feature file of every touched feature (body, `Updated`, a History line) and the index row if Status or Since changed; add file + index row for a new feature. Shared code (files directly in `includes/`, `admin/`, the main plugin file) needs the changelog line only. Pure refactors skip the feature-file update: a new `### Changed` line or a line containing `docs: none` under `[Unreleased]` waives it (the changelog line is still required).
+- **Release** (`fswpdevops-release`): `[Unreleased]` becomes `## [X.Y.Z] - date`, a fresh empty `[Unreleased]` stays on top; header `Version`, version constant, `Stable tag` and `readme.txt` changelog move together.
+- **Evidence for AI+ contract adoption** (no `contract.yaml` here yet): `changelog_unreleased_updated`, `feature_docs_updated`, `feature_index_current`, `docs_gate_exit_code` = the rows and exit code of `docs_gate.py`.
+
 ## How other skills use this
 
 Every build and maintenance skill follows it while writing. `fswpdevops-qa` runs PHPCS for the machine-checkable parts. `fswpdevops-reviewer` reports violations that affect behavior, translation, accessibility, or maintainability, not pure style nits.
