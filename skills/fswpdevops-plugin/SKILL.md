@@ -4,7 +4,7 @@ description: Plugin build stage of Full-Stack WP DevOps. House standards and cod
 license: MIT
 metadata:
   displayName: "FSWPDevOps Plugin Developer"
-  version: "0.5.2"
+  version: "0.5.3"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -49,7 +49,7 @@ When `fswpdevops-maintainer` runs in add-on mode it reuses steps 1-3 and 8 here.
 
 ## Standards (every build, every iteration)
 
-`references/standards.md` governs versioning/changelog discipline, the technology-stack decision, required project metadata (never invent a missing value), per-feature documentation in `docs/`, code-quality bar, and the minimal-code discipline (decide-before-you-write order, root-cause fixes, `shortcut:` markers). Read it before the first build and before any iteration on an existing plugin — it is not a one-time setup step.
+`references/standards.md` governs versioning/changelog discipline, the technology-stack decision, required project metadata (never invent a missing value), per-feature documentation in `docs/features/` (standard: `fswpdevops/references/coding-standards.md`, enforced by `docs_gate.py`), code-quality bar, and the minimal-code discipline (decide-before-you-write order, root-cause fixes, `shortcut:` markers). Read it before the first build and before any iteration on an existing plugin — it is not a one-time setup step.
 
 ## Security posture
 

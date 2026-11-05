@@ -93,7 +93,7 @@ convention line — deviating silently breaks the diffing).
 ```php
 // includes/class-{{prefix}}-db.php
 class {{Prefix}}_DB {
-    const DB_VERSION = '0.1.0';
+    const DB_VERSION = '0.0.1';
 
     public static function maybe_upgrade() {
         if ( get_option( '{{prefix_lower}}_db_version' ) !== self::DB_VERSION ) {

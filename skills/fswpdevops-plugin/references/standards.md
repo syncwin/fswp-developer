@@ -1,20 +1,16 @@
 # Standards: versioning, tech stack, code quality, documentation
 
-Contents: 1. Versioning and changelog discipline; 2. Technology stack; 3. Required project information; 4. Feature documentation; 5. Code quality; 6. Quality bar (applies to everything built or written — code, docs, PRDs, changelogs, readme, admin copy); 7. Minimal-code discipline.
+Contents: 1. Versioning and changelog discipline (points to the Documentation standard); 2. Technology stack; 3. Required project information; 4. Feature documentation; 5. Code quality; 6. Quality bar (applies to everything built or written — code, docs, PRDs, changelogs, readme, admin copy); 7. Minimal-code discipline.
 
 House-wide rules that apply to every plugin build, update, and iteration — not just first builds. `fswpdevops-architect` collects the inputs these rules need; `fswpdevops-plugin` applies them; `fswpdevops-qa` checks them.
 
 ## 1. Versioning and changelog discipline
 
-- **Every plugin and every skill starts at `0.1.0`**, not `1.0.0`. The `0.y.z` range is itself the beta/pre-release designation (semver.org: "major version zero is for initial development"); MAJOR moves to `1` only on a deliberate, stated decision that the plugin/skill is stable and its public interface (settings, data shape, hooks, shortcode API) won't break casually. This applies to a freshly scaffolded plugin's own header `Version`, its `DB_VERSION`/version constant, and `readme.txt` Stable tag alike — never default any of them to `1.0.0`.
-- **Default action on any change: add to the latest existing changelog entry**, not a new one. Small fixes, minor improvements, and tweaks accumulate under the current unreleased/latest entry.
-- **Bump the version only when the change justifies a new release** by normal semver practice:
-  - PATCH: bug fixes, small corrections, no behavior change for the user.
-  - MINOR: new feature, new option, backward-compatible capability.
-  - MAJOR: breaking change (removed feature, changed data shape, changed minimum requirements).
-  - A version bump means: increment `Version` in the plugin header, `{PREFIX}_VERSION`-style constant, and `Stable tag` in `readme.txt` together (checked by `fswpdevops-qa`'s version-consistency check either way), open a **new** changelog entry, and close the previous one.
-- **Changelog entries stay concise, unique, non-duplicative.** One line per real change, in the user's terms (what changed, not how). Never restate the same fix twice across entries. Group by Added / Changed / Fixed / Removed when an entry has more than a couple of lines.
-- Before adding a changelog line, check whether the latest entry already describes this change — update that line rather than adding a near-duplicate.
+- **Standard:** versioning, `CHANGELOG.md` and per-feature docs follow `fswpdevops/references/coding-standards.md` ("Documentation standard"). This file adds only the plugin-specific mechanics below.
+- **Every plugin and every skill starts at `0.0.1`**, not `1.0.0`. The `0.y.z` range is itself the beta/pre-release designation (semver.org: "major version zero is for initial development"); MAJOR moves to `1` only when the owner says the plugin/skill is stable and its public interface (settings, data shape, hooks, shortcode API) won't break casually. This applies to a freshly scaffolded plugin's own header `Version`, its `DB_VERSION`/version constant, and `readme.txt` Stable tag alike - never default any of them to `1.0.0`.
+- **Default action on any change: add a line under `## [Unreleased]`** in `CHANGELOG.md`; small fixes and tweaks accumulate there until a release.
+- **Bump the version only at a release**, by normal semver practice (PATCH fixes, MINOR backward-compatible features, MAJOR breaking). A release moves `[Unreleased]` into `## [X.Y.Z] - date` and increments `Version` in the plugin header, the `{PREFIX}_VERSION`-style constant, and `Stable tag` in `readme.txt` together (checked by `fswpdevops-qa`'s version-consistency check).
+- **Changelog entries stay concise, unique, non-duplicative.** One line per real change, in the user's terms. Before adding a line, check whether `[Unreleased]` already describes the change.
 
 ## 2. Technology stack
 
@@ -40,23 +36,11 @@ Ask for whatever isn't already stated as part of `fswpdevops-architect`'s essent
 
 ## 4. Feature documentation
 
-Every plugin, and every internal feature/functionality within it, gets a documentation entry describing what it does and how — detailed enough that if the feature is broken, removed, or changed by accident, the doc alone is enough to restore the intended behavior without re-deriving it from the code.
+Defined once in `fswpdevops/references/coding-standards.md` ("Documentation standard"): `docs/features/<feature-slug>.md` per feature using the feature-file template, `docs/features/README.md` index table, updated in the same change as the code. The doc alone must be enough to restore the intended behaviour if the feature is broken, removed, or changed by accident.
 
-- **Location:** `docs/<feature-slug>.md` inside the plugin folder (one file per feature), plus a short `docs/README.md` index linking each. For a single-feature plugin, one `docs/overview.md` is enough — don't force a multi-file split that adds no value.
-- **Update on every meaningful iteration**, not just at delivery. A change that alters behavior, inputs, outputs, or a dependency updates the matching doc in the same turn as the code change.
-- **Each feature doc covers, only where applicable (skip a heading with nothing to say rather than padding it):**
-  - What it does (one or two sentences, plain language)
-  - How it works (the mechanism — hooks used, data flow, key functions/classes)
-  - Inputs (settings, parameters, REST args, shortcode attributes)
-  - Outputs (what it renders, returns, or stores)
-  - Dependencies (other features/classes it relies on, external services, the JS/admin tier it uses)
-  - Constraints (capability required, rate limits, size caps, version requirements)
-- **Format: Markdown by default, JSON only where it's genuinely more token-efficient and more reliably agent-parseable.** Decide per feature, not per plugin:
-  - **Markdown** (the default) for anything prose-heavy — "what it does," "how it works," the narrative parts of any section above. It reads naturally for both a human and an agent, and costs roughly the same tokens as an equivalent JSON encoding once you account for JSON's mandatory punctuation, so there's no efficiency case for it here.
-  - **JSON** only for content that's genuinely structured/enumerable and would otherwise be forced into a markdown table an agent has to re-parse — a settings/options schema, a REST route table (path, method, args, permission), a data-model field list. Embed it as a fenced ` ```json ` block **inside the same feature doc**, right under the heading it supports — never a second parallel file. Two files per feature (one `.md`, one `.json`) costs more tokens to open and reconcile than one file with a fenced block, and breaks the "self-contained, one file per feature" rule above.
-  - When genuinely unsure which fits a given section, Markdown wins — it's both the safer default (per this section's own preference) and, per the quality bar (`standards.md` section 6, traits "minimalistic" and "efficient"), the simpler structure carries more weight than a marginal token difference.
-- **Format:** headings/subheadings, lists, tables where they help scanning. Fluff-free — no restating the obvious, no marketing language. Self-contained: a reader shouldn't need to open three other files to understand one feature.
-- **No duplication** across doc files unless duplication genuinely helps usability (e.g., a shared constraint worth restating in two feature docs a reader is unlikely to read together) — otherwise cross-reference instead of repeating.
+- A single-feature plugin still has one feature file plus the index.
+- Structured data (settings/options schema, REST route table, data-model fields) goes in a table or fenced ` ```json ` block inside the same feature file, under "How it works"; never a second parallel file.
+- Fluff-free, self-contained, no duplication across files (cross-reference instead).
 
 ## 5. Code quality
 

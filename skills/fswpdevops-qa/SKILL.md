@@ -4,7 +4,7 @@ description: Verification stage of Full-Stack WP DevOps. Runs the mechanical gat
 license: MIT
 metadata:
   displayName: "FSWPDevOps QA Engineer"
-  version: "0.5.2"
+  version: "0.5.3"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -22,6 +22,7 @@ bash scripts/run_gate.sh <dir> [min-php] [--fix]
 
 `run_gate.sh` detects a theme (a `style.css` with a Theme Name header) and runs `scripts/theme_check.py`; otherwise it runs `scripts/qa_check.py`. Both use Python's standard library only and always work. Then it adds, where PHP and the tools exist: `php -l`, PHPCS `WordPress-Extra` (errors fail, warnings are listed), PHP compatibility for the minimum PHP, and PHPStan level 5 with WordPress stubs.
 
+- `docs_gate.py <dir> [--base REF] [--static]` (standard library only; `run_gate.sh` runs it as a row): the documentation standard in `fswpdevops/references/coding-standards.md`. FAILS when `README.md` or `docs/{setup,architecture,ops}.md` is missing, `CHANGELOG.md` is not Keep a Changelog 1.1.0 (needs `## [Unreleased]`, six categories only), the `docs/features/` index and files disagree or break the template, or plugin/theme code changed against the base (default `origin/main`, then `main`) without a new `[Unreleased]` line or without a changed `docs/features/<slug>.md` for the touched feature. No git or no base: the diff checks are NOT RUN (never a pass).
 - `--fix` runs `phpcbf` (WordPress standard) first. Use it after scaffolding and after large edits; review the diff.
 - **Plugin Check** needs a WordPress install and the command line (`wp plugin check <slug>`); it is NOT RUN elsewhere. Tell the user to run it before a WordPress.org plugin submission. For themes, the equivalent is the Theme Check plugin or the directory's automated review.
 - `theme_check.py <dir> [--directory]`: without the flag, real defects FAIL and directory-only rules WARN; with `--directory`, the WordPress.org Theme Directory requirements FAIL (missing headers, screenshot size and ratio, disallowed files, plugin-territory code, required classic-theme calls).

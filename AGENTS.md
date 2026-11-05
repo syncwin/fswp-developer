@@ -8,6 +8,7 @@ Full-Stack WP DevOps Claude plugin: WordPress plugin, theme, block, Core and add
 - Detect project: `python skills/fswpdevops-architect/scripts/detect_wp_project.py <dir>`
 - QA gate: `bash skills/fswpdevops-qa/scripts/run_gate.sh <plugin-dir> [min-php, default 7.4] [--fix]`
 - Single checks: `python skills/fswpdevops-qa/scripts/qa_check.py <plugin-dir> [--json]`, `python skills/fswpdevops-qa/scripts/theme_check.py`
+- Docs gate: `python skills/fswpdevops-qa/scripts/docs_gate.py <dir> [--base REF] [--static]` (also a row of `run_gate.sh`)
 - Scaffold: `skills/fswpdevops-plugin/scripts/scaffold_plugin.py`, `skills/fswpdevops-theme/scripts/scaffold_theme.py`
 - Validate: `claude plugin validate . --strict`
 - Evals (real model calls): `claude plugin eval . --trust-plugin --ablation none --scaffold --allow-tools Read Glob Grep Skill -j 4 --no-publish`. Rebuild cases with `python A:\Automation\plugin-evals\regen_evals.py <plugin> <router> <fixture ids>`. Write results outside the repo (`D:\SyncWin\AI Outputs\<plugin>\eval-results`); the packager includes repo files.

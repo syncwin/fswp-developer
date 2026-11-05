@@ -7,7 +7,7 @@ if ( ! class_exists( '{{Prefix}}_DB' ) ) :
 
 class {{Prefix}}_DB {
 
-    const DB_VERSION = '0.1.0';
+    const DB_VERSION = '0.0.1';
 
     public static function maybe_upgrade() {
         if ( get_option( '{{prefix}}_db_version' ) !== self::DB_VERSION ) {

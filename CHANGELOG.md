@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.5.3] - 2026-11-05
+
+### Added
+- Documentation standard for every plugin, theme and add-on the plugin builds (single source: coding-standards.md): README.md and docs/ (setup, architecture, ops), CHANGELOG.md (Keep a Changelog 1.1.0, SemVer 2.0.0, starts at 0.0.1, [Unreleased] on top, pre-1.0 = beta), and docs/features/ with an index table and a lean feature-file template (status, context, behaviour, how it works, UI, limits, history).
+- fswpdevops-qa/scripts/docs_gate.py (stdlib): FAILS when plugin or theme code changed without a CHANGELOG [Unreleased] line, without a changed feature file for the touched feature, or with a stale docs/features index; also checks changelog format and the feature-file template. A row of run_gate.sh; NOT RUN without git.
+- Plugin and theme scaffolds write the standard files (README, CHANGELOG 0.0.1, docs, docs/features index and feature files).
+
+### Changed
+- Feature docs moved from docs/<feature>.md to docs/features/<feature>.md (qa_check.py item 13, checklist, standards.md updated); planned features may keep FILL IN markers.
+- Versions start at 0.0.1 (was 0.1.0): scaffold templates, readme Stable tag and theme header. Changelog discipline now means lines under [Unreleased] until a release.
+- Reviewer quality lens, release checklist, release check, plugin and maintainer skills point to the standard.
+
+### Fixed
+- run_gate.sh detail column no longer garbled by carriage returns in script output.
+
 ## [0.5.2] - 2026-11-05
 
 ### Added

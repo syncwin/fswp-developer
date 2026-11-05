@@ -15,7 +15,14 @@ row() { rows+=("$1|$2|$3"); if [ "$2" = FAIL ]; then fail=1; fi; return 0; }
 
 if [ -f "$D/style.css" ] && grep -qi "Theme Name:" "$D/style.css"; then CHK=theme_check.py; LABEL="theme_check.py (house rules)"; else CHK=qa_check.py; LABEL="qa_check.py (house rules)"; fi
 out=$(python3 "$HERE/$CHK" "$D" 2>&1); rc=$?
-[ $rc -eq 0 ] && row "$LABEL" PASS "$(printf '%s' "$out" | tail -1)" || row "$LABEL" FAIL "$(printf '%s' "$out" | grep '^\[FAIL\]' | head -3 | tr '\n' ';')"
+[ $rc -eq 0 ] && row "$LABEL" PASS "$(printf '%s' "$out" | tail -1)" || row "$LABEL" FAIL "$(printf '%s' "$out" | grep '^\[FAIL\]' | head -3 | tr -d '\r' | tr '\n' ';')"
+
+# Documentation standard (docs_gate.py): README + docs, CHANGELOG [Unreleased], docs/features index and files. Diff checks need git + a base branch.
+out=$(python3 "$HERE/docs_gate.py" "$D" 2>&1); rc=$?
+dg=$(printf '%s' "$out" | grep -E ' (FAIL|NOT RUN) ' | head -3 | tr -d '\r' | sed 's/  */ /g' | tr '\n' ';')
+if [ $rc -ne 0 ]; then row "docs_gate.py (documentation standard)" FAIL "$dg"
+elif printf '%s' "$out" | grep -q ' NOT RUN '; then row "docs_gate.py (documentation standard)" "NOT RUN" "static checks passed; $dg"
+else row "docs_gate.py (documentation standard)" PASS "all documentation checks passed"; fi
 
 if command -v php >/dev/null 2>&1; then
   bad=$(find "$D" -name '*.php' -not -path '*/vendor/*' -not -path '*/node_modules/*' -exec php -l {} \; 2>&1 | grep -v '^No syntax errors' | grep -v '^$')

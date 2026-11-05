@@ -208,23 +208,24 @@ def run(root):
     else:
         add("SKIP", "Source ships with compiled output", "no build/ or dist/ folder")
 
-    # 13. Feature documentation present (docs/) and stubs actually filled in
+    # 13. Feature documentation present (docs/features/) and stubs actually filled in
     has_features = any(os.path.isdir(os.path.join(root, d)) for d in ("includes", "admin")) or \
         any(re.search(r"add_shortcode|register_rest_route|register_post_type", t) for t in src.values())
-    docs_dir = os.path.join(root, "docs")
+    docs_dir = os.path.join(root, "docs", "features")
     if has_features:
         if not os.path.isdir(docs_dir):
-            add("FAIL", "docs/ feature documentation present", "no docs/ folder found (scaffold generates stubs; they were removed or build skipped them)")
+            add("FAIL", "docs/features/ feature documentation present", "no docs/features/ folder found (scaffold generates stubs; they were removed or build skipped them)")
         else:
             doc_files = [f for f in os.listdir(docs_dir) if f.endswith(".md") and f != "README.md"]
             if not doc_files:
-                add("FAIL", "docs/ feature documentation present", "docs/ exists but has no feature files")
+                add("FAIL", "docs/features/ feature documentation present", "docs/features/ exists but has no feature files")
             else:
-                unfilled = [f for f in doc_files if "FILL IN:" in read(os.path.join(docs_dir, f))]
-                add("FAIL" if unfilled else "PASS", "docs/ feature documentation completed",
+                unfilled = [f for f in doc_files if "FILL IN:" in read(os.path.join(docs_dir, f))
+                            and "**Status:** planned" not in read(os.path.join(docs_dir, f))]
+                add("FAIL" if unfilled else "PASS", "docs/features/ feature documentation completed",
                     f"unfilled stub(s): {', '.join(unfilled)}" if unfilled else f"{len(doc_files)} doc file(s), all filled")
     else:
-        add("SKIP", "docs/ feature documentation present", "no feature classes detected")
+        add("SKIP", "docs/features/ feature documentation present", "no feature classes detected")
 
     # 14. Bundled fonts carry a license
     fonts = [p for p in walk(root, (".woff2", ".woff", ".ttf", ".otf"), True)]

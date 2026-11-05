@@ -9,6 +9,7 @@ Usage:
 Values you do not pass are left out of the header; nothing is invented.
 """
 import argparse
+import datetime
 import os
 import shutil
 import sys
@@ -25,7 +26,7 @@ def header(a):
     lines.append("Description: " + (a.description or a.name))
     if a.type == "child":
         lines.append("Template: " + a.parent)
-    lines += ["Version: 0.1.0", "Requires at least: " + a.min_wp]
+    lines += ["Version: 0.0.1", "Requires at least: " + a.min_wp]
     if a.tested_up_to:
         lines.append("Tested up to: " + a.tested_up_to)
     lines += ["Requires PHP: " + a.min_php,
@@ -118,7 +119,7 @@ def classic(a, root):
 /**
  * Registers theme supports and menus.
  *
- * @since 0.1.0
+ * @since 0.0.1
  */
 function """ + px + """_setup() {
 	load_theme_textdomain( '""" + s + """', get_template_directory() . '/languages' );
@@ -136,7 +137,7 @@ add_action( 'after_setup_theme', '""" + px + """_setup' );
 /**
  * Enqueues the theme stylesheet.
  *
- * @since 0.1.0
+ * @since 0.0.1
  */
 function """ + px + """_enqueue_styles() {
 	wp_enqueue_style( '""" + s + """', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
@@ -199,7 +200,7 @@ def child(a, root):
 /**
  * Enqueues the parent and child stylesheets.
  *
- * @since 0.1.0
+ * @since 0.0.1
  */
 function """ + px + """_enqueue_styles() {
 	$parent = wp_get_theme( get_template() );
@@ -239,8 +240,46 @@ def main():
         sys.exit("refusing to overwrite " + root)
     {"block": block, "classic": classic, "child": child}[a.type](a, root)
     w(root, "readme.txt", "=== " + a.name + " ===\nRequires at least: " + a.min_wp + "\nRequires PHP: " + a.min_php +
-      "\nStable tag: 0.1.0\nLicense: GPLv2 or later\nLicense URI: https://www.gnu.org/licenses/gpl-2.0.html\n\n== Description ==\n" +
-      (a.description or a.name) + "\n\n== Changelog ==\n= 0.1.0 =\n* Initial version.\n")
+      "\nStable tag: 0.0.1\nLicense: GPLv2 or later\nLicense URI: https://www.gnu.org/licenses/gpl-2.0.html\n\n== Description ==\n" +
+      (a.description or a.name) + "\n\n== Changelog ==\n= 0.0.1 =\n* Initial version.\n")
+    # Documentation standard (fswpdevops/references/coding-standards.md): README.md, CHANGELOG.md at 0.0.1,
+    # docs/{setup,architecture,ops}.md and docs/features/ (index + one feature file). FILL IN: markers are
+    # filled from the approved PRD before delivery; docs_gate.py fails on one left in a non-planned feature.
+    w(root, "README.md", "# " + a.name + "\n\n" + (a.description or a.name) + "\n\nMore: [setup](docs/setup.md), [architecture](docs/architecture.md), "
+      "[ops](docs/ops.md), [features](docs/features/README.md), [changelog](CHANGELOG.md).\n")
+    w(root, "CHANGELOG.md", "# Changelog\n\nFormat: [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.1.0/); versions: "
+      "[SemVer 2.0.0](https://semver.org/spec/v2.0.0.html). Pre-1.0 is beta.\n\n## [Unreleased]\n\n## [0.0.1] - "
+      + datetime.date.today().isoformat() + "\n\n### Added\n- Initial " + a.type + " theme scaffold.\n")
+    w(root, "docs/setup.md", "# Setup\n\n1. Use a local WordPress site.\n2. Put `" + a.slug + "` in `wp-content/themes/` and activate it.\n"
+      "3. Quality gate: `run_gate.sh` and `docs_gate.py` from the fswpdevops-qa skill.\n")
+    w(root, "docs/architecture.md", "# Architecture\n\n- Type: " + a.type + " theme. Templates, parts, patterns and `theme.json` define the site.\n"
+      "- FILL IN: template hierarchy, style variations, patterns and any PHP as they appear.\n")
+    w(root, "docs/ops.md", "# Ops\n\n- Release: move `[Unreleased]` in CHANGELOG.md into the new version; `style.css` Version and readme `Stable tag` move together.\n"
+      "- Troubleshooting: FILL IN as issues are found.\n")
+    w(root, "docs/features/README.md", "# Features\n\nOne file per feature. Keep this table current (status, since version).\n\n"
+      "| Feature | Status | Since | File |\n|---|---|---|---|\n| Templates and styles | beta | 0.0.1 | [templates.md](templates.md) |\n")
+    w(root, "docs/features/templates.md", """# Templates and styles
+
+**Status:** beta | **Since:** 0.0.1 | **Updated:** 0.0.1
+
+## Context
+FILL IN: what the site looks like and does, who it is for.
+
+## Behaviour
+FILL IN: each template type, what the visitor sees with real and with empty content, states, edge cases.
+
+## How it works
+FILL IN: templates, parts, patterns, `theme.json` settings and styles, any PHP hooks, config.
+
+## UI
+FILL IN: text description of layout, header, footer, navigation and responsive behaviour (no screenshots needed).
+
+## Limits & known issues
+None yet.
+
+## History
+- 0.0.1: first version
+""")
     print("created", root)
     if a.zip:
         print("zip:", shutil.make_archive(root, "zip", a.out, a.slug))

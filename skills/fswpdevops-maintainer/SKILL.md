@@ -4,7 +4,7 @@ description: Change stage for existing WordPress code in Full-Stack WP DevOps. U
 license: MIT
 metadata:
   displayName: "FSWPDevOps Maintainer"
-  version: "0.5.2"
+  version: "0.5.3"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -41,6 +41,8 @@ An add-on is a separate plugin (or a small theme layer) that extends a host. Str
 8. **Licensing and naming.** Follow the host's brand and trademark rules for names; use a descriptive "for X" style rather than implying it is official.
 
 ## Verify
+
+Docs move in the same change as the code (`fswpdevops/references/coding-standards.md`, Documentation standard): an `[Unreleased]` line, the touched feature files, the index.
 
 Hand to `fswpdevops-qa` with the change brief's parity list and compatibility table as the scenario source. `references/safe-change-checklist.md` is the quick pre-delivery list.
 

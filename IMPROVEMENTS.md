@@ -3,12 +3,13 @@
 Log feedback and ideas here; move to Accepted when approved.
 
 ## Inbox
-- 2026-11-05 | Versioning: every new app/plugin starts at 0.0.1 with a semantic CHANGELOG (Keep a Changelog); bump slowly (patch/minor) through beta; 1.0.0 only when the owner says so. | User
 Format: date · idea · source
 
 - 2026-11-04 · AGENTS.md model routing (Opus plans, Haiku/Sonnet execute) as a shipped default · all plugins (Claude plugins note)
 
 ## Accepted
+- 2026-11-05 · AI+ contract adoption: when the plugin gets a contract.yaml, add evidence signals changelog_unreleased_updated, feature_docs_updated, feature_index_current, docs_gate_exit_code (rows of docs_gate.py) · User (docs standard)
 
 ## Done
 - 2026-11-05 · Security first (enterprise level): secure-by-default baseline, threat model in each brief, secret scanning, supply-chain pinning/audit, signed releases, security findings block release · done in 0.5.2 (PR sec/baseline) · User
+- 2026-11-05 · Documentation standard enforced (README + docs/, Keep a Changelog from 0.0.1, docs/features/ index and template, docs_gate.py in the QA gate); 0.0.1 start and beta-until-1.0 rule · done in 0.5.3 (PR feat/docs-standard) · User

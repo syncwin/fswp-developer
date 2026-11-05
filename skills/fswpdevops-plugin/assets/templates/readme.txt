@@ -4,7 +4,7 @@ Tags: {{tag1}}, {{tag2}}, {{tag3}}
 Requires at least: 6.4
 Tested up to: {{latest-tested-wp-version}}
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 0.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,5 +42,5 @@ WordPress.org review rejects promotional language in this section.}}
 
 == Changelog ==
 
-= 1.0.0 =
+= 0.0.1 =
 * Initial release.
