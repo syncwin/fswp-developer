@@ -4,7 +4,7 @@ description: Verification stage of Full-Stack WP DevOps. Runs the mechanical gat
 license: MIT
 metadata:
   displayName: "FSWPDevOps QA Engineer"
-  version: "0.5.1"
+  version: "0.5.2"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -16,7 +16,7 @@ Verify the built folder, do not fix during gating. Report first, then fix in the
 ## 1. Mechanical gate
 
 ```
-bash scripts/setup_toolchain.sh              # once per environment (apt + GitHub only, no Composer)
+bash scripts/setup_toolchain.sh              # once per environment (apt + GitHub only, no Composer) — downloads are checksum-recorded in SHA256SUMS; the gate refuses a tool that no longer matches
 bash scripts/run_gate.sh <dir> [min-php] [--fix]
 ```
 

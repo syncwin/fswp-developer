@@ -36,6 +36,9 @@ What renders publicly; JS-tier checklist result and recommended tier.
 ## 9. Non-functional requirements
 Inherited, not re-litigated: security baseline, i18n including JS strings, distribution-target requirements, unit policy (rem), accessibility (WCAG 1.4.4 for fluid type).
 
+## 9a. Threat model
+Assets (data, keys, accounts) · entry points (requests, uploads, REST/AJAX, cron, imports) · top 3 abuse cases with the control for each. Rules: `fswpdevops-security`.
+
 ## 10. WordPress.org compliance (only when target is "both")
 | Requirement | WordPress.org build | Private build | Difference |
 |---|---|---|---|

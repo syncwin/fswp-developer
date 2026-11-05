@@ -4,7 +4,7 @@ description: Release and distribution role for Full-Stack WP DevOps. Prepares pl
 license: MIT
 metadata:
   displayName: "FSWPDevOps Release Manager"
-  version: "0.5.1"
+  version: "0.5.2"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -25,10 +25,10 @@ The published rules are authoritative and change; the summaries here were checke
 
 1. Version bumped everywhere it lives: main file header, version constant, `readme.txt` Stable tag (plugins) or `style.css` Version (themes), `package.json`, changelog.
 2. Changelog entry written for users, not commit noise.
-3. `fswpdevops-qa` gate and release check are green; every NOT RUN item is listed for the user.
+3. `fswpdevops-qa` gate and release check are green; every NOT RUN item is listed for the user. **Security gate:** reviewer security lens has no Critical or Important findings, secret scan and dependency audit ran (or are listed NOT RUN), `fswpdevops-security` §Secure by default is satisfied.
 4. License headers present and every bundled asset's license documented (fonts, images, libraries).
 5. No development files in the zip: no `.git`, `node_modules`, tests, editor configs, `.sh` or `.xml` files in themes, zip files inside the package. Compiled assets ship with their source and build steps.
-6. Zip has the plugin or theme folder at its root, named with the slug.
+6. Zip has the plugin or theme folder at its root, named with the slug, built from a clean checkout of the tag, with a SHA-256 checksum next to it (private distribution: sign it with the owner's key, never store keys in the repo).
 7. Install the final zip on a clean site: activate, use, deactivate, delete (or mark NOT RUN and hand to the user).
 8. For WordPress.org: submission notes, contact email that reaches a human, and answers ready for reviewer questions.
 

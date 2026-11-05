@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.5.2] - 2026-11-05
+
+### Added
+- Secure-by-default baseline in fswpdevops-security (threat model, secret scanning, least privilege, supply chain, signed releases, release gate); threat-model sections in the PRD and change brief; CI outline with lockfile installs, audits and pinned actions; Critical or Important security findings block release.
+
+### Fixed
+- QA toolchain downloads (phpcs, phpcbf, phpstan) were unpinned "latest" binaries run without verification; setup now records SHA-256 checksums and the gate fails closed (refuses to run) when a tool does not match.
+
 ## [0.5.1] - 2026-11-03
 ### Fixed
 Cleared all 30 validator warnings: a "use" cue in six stage descriptions, a closing scratchpad line in every skill, contents lists in the long plugin and security references, and the foundational-rules line now lives only in the router.
