@@ -4,7 +4,7 @@ description: Shared WordPress security baseline for Full-Stack WP DevOps. The ru
 license: MIT
 metadata:
   displayName: "FSWPDevOps Security Engineer"
-  version: "0.5.1"
+  version: "0.5.2"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -54,6 +54,16 @@ Escape values you built yourself too. Never rely on "it was sanitized when saved
 - Outbound requests from input use `wp_safe_remote_*`; redirects from input use `wp_safe_redirect`.
 - Secrets never live in source, and never appear in REST responses, logs, or error messages.
 - Every PHP file that is not a class-only file starts with `defined( 'ABSPATH' ) || exit;`.
+
+## Secure by default (every project; single source, other skills link here)
+
+1. **Threat model** in every PRD and change brief: assets, entry points (requests, uploads, REST/AJAX, cron, imports), attackers, top 3 abuse cases with the control for each.
+2. **Secret scanning:** gitleaks as a pre-commit hook and a CI job; add `.env*`, keys and exports to `.gitignore`. Check every diff for `github_pat_`, `ghp_`, `sk-`, `Bearer `, `password=` before commit; a hit stops the work. Secrets live in `wp-config.php` constants or environment variables.
+3. **Least privilege:** narrowest capabilities, scoped short-lived tokens, CI `permissions: contents: read`, a database user limited to the site's schema.
+4. **Supply chain:** commit `composer.lock` and `package-lock.json`, install with `composer install` / `npm ci`, run `composer audit` and `npm audit --omit=dev` (or `osv-scanner`) on every release; pin GitHub Actions to a commit SHA; downloaded tool binaries and clones are pinned in toolchain.lock and verified (`fswpdevops-qa/scripts/setup_toolchain.sh`).
+5. **Input and storage:** the five habits above on every entry point; sensitive options not autoloaded and not echoed in REST or logs.
+6. **Signed releases:** ship the zip with a SHA-256 checksum, built from a clean checkout of the tag (`fswpdevops-release`).
+7. **Gate:** any Critical or Important security finding blocks release until fixed or accepted in writing by the user.
 
 ## Depth
 

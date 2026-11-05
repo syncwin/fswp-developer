@@ -4,7 +4,7 @@ description: Independent review stage of Full-Stack WP DevOps. Reviews a finishe
 license: MIT
 metadata:
   displayName: "FSWPDevOps Reviewer"
-  version: "0.5.1"
+  version: "0.5.2"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -33,7 +33,7 @@ Fix: the smallest change that closes it
 
 ## Verdict
 
-Security/quality: one final line, `ship` or `fix first`, with the Critical and Important counts. Lean audit: the total lines and dependencies that would go if every finding were applied; no ship/fix-first verdict, because a lean audit is not a release gate.
+Security/quality: one final line, `ship` or `fix first`, with the Critical and Important counts. Any Critical or Important security finding means `fix first` (it blocks release). Lean audit: the total lines and dependencies that would go if every finding were applied; no ship/fix-first verdict, because a lean audit is not a release gate.
 
 ## Independence
 

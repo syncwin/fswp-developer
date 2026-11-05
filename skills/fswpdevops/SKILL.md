@@ -4,7 +4,7 @@ description: Full-Stack WP DevOps - the entry point and router for the whole Wor
 license: MIT
 metadata:
   displayName: "Full-Stack WP DevOps"
-  version: "0.5.1"
+  version: "0.5.2"
   author: "@wasimness"
   company: "SyncWin"
 ---
