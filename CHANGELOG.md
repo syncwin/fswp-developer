@@ -7,6 +7,7 @@
 
 ### Fixed
 - QA toolchain downloads (phpcs, phpcbf, phpstan) were unpinned "latest" binaries run without verification; setup now records SHA-256 checksums and the gate fails closed (refuses to run) when a tool does not match.
+- Review fixes: toolchain pinned in `skills/fswpdevops-qa/scripts/toolchain.lock` (release versions, official SHA-256 digests, git tags with commit SHAs) with no trust on first use; setup verifies before use; the gate now FAILS (non-zero, "re-run setup_toolchain.sh") when an installed phar has a missing or mismatched checksum instead of reporting NOT RUN; clones use `--branch <tag>` and a commit check; the old SHA256SUMS record() is removed.
 
 ## [0.5.1] - 2026-11-03
 ### Fixed

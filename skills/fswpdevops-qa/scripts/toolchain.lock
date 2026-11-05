@@ -1,0 +1,16 @@
+# Pinned QA toolchain. Source of truth for setup_toolchain.sh and run_gate.sh (nothing next to the binaries is trusted).
+# Format: phar <file> <version> <sha256> <url>   |   git <dir> <tag> <commit-sha> <url>
+# phar SHA-256 source: official GitHub release asset digest (gh release view --json assets) for
+#   PHPCSStandards/PHP_CodeSniffer 4.0.4 and phpstan/phpstan 2.3.5; phpstan.phar re-hashed locally after download: identical.
+# git commit SHAs source: GitHub API (gh api repos/<repo>/commits/<tag>), dereferenced tag commit, 2026-11-05.
+# To upgrade: change version + hash from the new official release, review, commit.
+phar phpcbf.phar 4.0.4 0b3b8c5571543e94452f6edec0d7e924b287a64c13b73d8dcf3d25f0ee004948 https://github.com/PHPCSStandards/PHP_CodeSniffer/releases/download/4.0.4/phpcbf.phar
+phar phpcs.phar 4.0.4 4b010cd21d8bc8a17e2504792e3c77ef8259126f24caf7eafe7eddef1fa871e9 https://github.com/PHPCSStandards/PHP_CodeSniffer/releases/download/4.0.4/phpcs.phar
+phar phpstan.phar 2.3.5 4b3ed7850a20b092331bd1040e4f54a1d3c0559b4cf006431073997ebcb4324b https://github.com/phpstan/phpstan/releases/download/2.3.5/phpstan.phar
+git WordPress-Coding-Standards 3.4.1 ec2ff942335f33683a5957a85d138753876a05cf https://github.com/WordPress/WordPress-Coding-Standards.git
+git PHPCSUtils 1.2.3 5f35d9408c54d7b529501f3c688b6eae562aea1f https://github.com/PHPCSStandards/PHPCSUtils.git
+git PHPCSExtra 1.5.1 39467533fdb742446d68c1d10ac33d625ee0311c https://github.com/PHPCSStandards/PHPCSExtra.git
+git PHPCompatibility 9.3.5 9fb324479acf6f39452e0655d2429cc0d3914243 https://github.com/PHPCompatibility/PHPCompatibility.git
+git PHPCompatibilityWP 2.1.8 7c8d18b4d90dac9e86b0869a608fa09158e168fa https://github.com/PHPCompatibility/PHPCompatibilityWP.git
+git PHPCompatibilityParagonie 1.3.4 244d7b04fc4bc2117c15f5abe23eb933b5f02bbf https://github.com/PHPCompatibility/PHPCompatibilityParagonie.git
+git wordpress-stubs v7.1.2 6926c5156431a3ff909d43faa16a92a0bc0c2428 https://github.com/php-stubs/wordpress-stubs.git

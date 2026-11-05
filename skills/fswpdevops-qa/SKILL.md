@@ -16,7 +16,7 @@ Verify the built folder, do not fix during gating. Report first, then fix in the
 ## 1. Mechanical gate
 
 ```
-bash scripts/setup_toolchain.sh              # once per environment (apt + GitHub only, no Composer) — downloads are checksum-recorded in SHA256SUMS; the gate refuses a tool that no longer matches
+bash scripts/setup_toolchain.sh              # once per environment (apt + GitHub only, no Composer) — versions, SHA-256 and commit SHAs are pinned in scripts/toolchain.lock; the gate FAILS (not NOT RUN) when an installed phar mismatches, re-run setup_toolchain.sh
 bash scripts/run_gate.sh <dir> [min-php] [--fix]
 ```
 
