@@ -39,6 +39,8 @@ Compare the diff or file list with the approved brief. Files, hooks, options, or
 
 `references/checklist.md`: only the items a script cannot judge. Run it after the mechanical gate is green.
 
+Tier 3 React admin SPA: also confirm the axe-core CI run, the manual accessibility pass, written gating test scenarios and the dependency license rule from `fswpdevops-plugin/references/modern-app-stack.md` (sections 9, 10, licensing note).
+
 ## 3. Scenario tests
 
 Every numbered scenario in the PRD (`fswpdevops-architect`) gets PASS, FAIL, or NOT RUN with evidence. Always include:

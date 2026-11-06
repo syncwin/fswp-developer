@@ -53,6 +53,8 @@ Everything open-ended (field names, business rules, edge cases, working name) is
 
 **Technology-stack decision:** for new work, decide admin-UI tier and JS tier before drafting the PRD (`fswpdevops-plugin/references/standards.md` section 2). For existing work, the existing stack stands unless there is a stated reason to change it.
 
+**Admin UI question (new plugins with an admin screen):** ask "React admin SPA vs native/BEM?" in the same round. Default is native; offer the React SPA only for an app-like admin (several interactive screens, real-time state, data tables, multi-step flows) and record the answer in the PRD. If React: follow `fswpdevops-plugin/references/modern-app-stack.md` (decision checklist first).
+
 ## Step 2: Competitive research
 
 2-3 leading products in the category (WordPress.org directory or SaaS). Capture table-stakes features, common complaints, and conventions worth matching. A handful of searches; 3-5 bullets in the document. Skip for Core patches; research the ticket history instead.

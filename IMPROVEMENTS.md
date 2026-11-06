@@ -6,6 +6,7 @@ Log feedback and ideas here; move to Accepted when approved.
 Format: date · idea · source
 
 - 2026-11-04 · AGENTS.md model routing (Opus plans, Haiku/Sonnet execute) as a shipped default · all plugins (Claude plugins note)
+- 2026-11-06 · AI guardrails reference: enforce rules in code on every AI tool action (identity from login, amount limits, human approval above a threshold), input guards (PII masking, off-topic, attack classifier), output guards, facts (prices, deadlines, policies) from the database not the model. For future site assistants (e.g. WooCommerce stores) and AIOS · YouTube Short ig2JpD_sAHE
 
 ## Accepted
 - 2026-11-05 · AI+ contract adoption: when the plugin gets a contract.yaml, add evidence signals changelog_unreleased_updated, feature_docs_updated, feature_index_current, docs_gate_exit_code (rows of docs_gate.py) · User (docs standard)
