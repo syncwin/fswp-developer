@@ -2,6 +2,8 @@
 
 A Claude plugin covering the whole WordPress development lifecycle. Say what you want built or changed; it classifies the work, plans it, builds it, runs a mechanical QA gate, and hands the result to an independent reviewer.
 
+**Download:** [fswpdevops.plugin](https://github.com/syncwin/fswpdevops/releases/latest/download/fswpdevops.plugin) (always the latest release)
+
 **It handles:** custom themes (block, classic, child), custom plugins, updates to existing themes and plugins, add-ons for products you do not own, and patches for WordPress Core.
 
 Trigger with `/fswpdevops`, or just describe the job in plain language. Every skill name starts with `fswpdevops-` to avoid colliding with other skills, and names a role rather than an activity (`fswpdevops-plugin`, not `fswp-plugin-development`).
