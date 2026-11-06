@@ -4,7 +4,7 @@ description: Planning stage of Full-Stack WP DevOps. Classifies the work (new pl
 license: MIT
 metadata:
   displayName: "FSWPDevOps Architect"
-  version: "0.6.0"
+  version: "0.6.1"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -57,7 +57,7 @@ Everything open-ended (field names, business rules, edge cases, working name) is
 
 ## Step 2: Competitive research
 
-2-3 leading products in the category (WordPress.org directory or SaaS). Capture table-stakes features, common complaints, and conventions worth matching. A handful of searches; 3-5 bullets in the document. Skip for Core patches; research the ticket history instead.
+Apply the router's Official first rule and cite the source for each choice. 2-3 leading products in the category (WordPress.org directory or SaaS). Capture table-stakes features, common complaints, and conventions worth matching. A handful of searches; 3-5 bullets in the document. Skip for Core patches; research the ticket history instead.
 
 ## Step 3: The document
 

@@ -4,7 +4,7 @@ description: Full-Stack WP DevOps - the entry point and router for the whole Wor
 license: MIT
 metadata:
   displayName: "Full-Stack WP DevOps"
-  version: "0.6.0"
+  version: "0.6.1"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -42,7 +42,7 @@ Unclear or mixed? Ask one question. Details: `references/work-types.md`.
 ## Selection rules
 
 - **One owner per domain** (`references/domain-map.md`). Do not re-derive its rules elsewhere.
-- **Official first.** Precedence: developer.wordpress.org documentation and coding standards, then role skills, then build-skill house rules; house rules may be stricter, never looser (`references/precedence.md`).
+- **Official first, at every stage (research before building).** Before choosing an approach, file, tool, config or dependency, check current official docs and widely recommended, secure practice; cite the source in the docs or brief; mark anything unverified; never guess. Keep research scoped to what the task needs (smallest complete change). Precedence: developer.wordpress.org documentation and coding standards, then role skills, then build-skill house rules; house rules may be stricter, never looser (`references/precedence.md`).
 - **Triage runs once** at the start of Update, Add-on, and Core work (`fswpdevops-architect/scripts/detect_wp_project.py`).
 - **Never invent facts about the user's project.** Names, links, versions, and credentials not given are left out.
 

@@ -4,7 +4,7 @@ description: Change stage for existing WordPress code in Full-Stack WP DevOps. U
 license: MIT
 metadata:
   displayName: "FSWPDevOps Maintainer"
-  version: "0.6.0"
+  version: "0.6.1"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -15,7 +15,7 @@ The existing code is the specification. Executes an approved change brief from `
 
 ## Mode A: Update an existing plugin or theme
 
-1. **Read first, list touch points.** Apply the lean ladder (`fswpdevops/references/lean-coding.md`): read the files the change touches, their callers, and their tests, and list every place the change must reach. Note the prefix, naming, error-handling style, and how settings and data are stored.
+1. **Read first, list touch points.** Apply the lean ladder (`fswpdevops/references/lean-coding.md`): read the files the change touches, their callers, and their tests, and list every place the change must reach. Note the prefix, naming, error-handling style, and how settings and data are stored. Research before building: apply the router's Official first rule.
 2. **Reproduce.** For a bug, write down steps and the observed result; confirm the failure before changing anything. For a feature, state the acceptance check.
 3. **Smallest change that works.** Fix the cause in shared code, not one call site. Do not reformat untouched code; noisy diffs hide real changes and break blame.
 4. **Protect the public surface.** Hook names, function and class names, option keys, meta keys, REST routes and shapes, shortcode attributes, and template overrides are contracts. To change one, deprecate first: keep the old one working, call `_deprecated_function()` / `_deprecated_hook()` (or `_deprecated_argument()`), document the replacement, and remove no sooner than a later major version.

@@ -4,7 +4,7 @@ description: Verification stage of Full-Stack WP DevOps. Runs the mechanical gat
 license: MIT
 metadata:
   displayName: "FSWPDevOps QA Engineer"
-  version: "0.6.0"
+  version: "0.6.1"
   author: "@wasimness"
   company: "SyncWin"
 ---

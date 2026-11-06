@@ -4,7 +4,7 @@ description: Domain skill for WordPress block editor work in Full-Stack WP DevOp
 license: MIT
 metadata:
   displayName: "FSWPDevOps Block Developer"
-  version: "0.6.0"
+  version: "0.6.1"
   author: "@wasimness"
   company: "SyncWin"
 ---
