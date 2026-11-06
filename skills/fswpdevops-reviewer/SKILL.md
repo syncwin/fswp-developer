@@ -1,10 +1,10 @@
 ---
 name: fswpdevops-reviewer
-description: Independent review stage of Full-Stack WP DevOps. Reviews a finished WordPress plugin, theme, add-on, or Core patch through a security lens (WordPress-specific vulnerabilities, REST and AJAX authorization with an API risk map, AI-generated-code risks), a quality lens (error handling, data and upgrade safety, performance, i18n, accessibility, comment accuracy, test gaps, class and type design, scope), and an optional lean lens for trimming over-engineering, reporting only high-confidence findings in a fixed format. Invoked by fswpdevops after the verify gate, normally through the fswpdevops-code-reviewer agent; use directly to review or optimize any WordPress code.
+description: Independent review stage of Full-Stack WP DevOps. Reviews a finished WordPress plugin, theme, add-on, or Core patch through a security lens (WordPress-specific vulnerabilities, REST and AJAX authorization with an API risk map, AI-generated-code risks), a quality lens (error handling, data and upgrade safety, performance, i18n, accessibility, comment accuracy, test gaps, class and type design, scope), and an optional lean lens (the lean ladder, with a debt mode for shortcut notes) for trimming over-engineering, reporting only high-confidence findings in a fixed format. Invoked by fswpdevops after the verify gate, normally through the fswpdevops-code-reviewer agent; use directly to review or optimize any WordPress code.
 license: MIT
 metadata:
   displayName: "FSWPDevOps Reviewer"
-  version: "0.5.4"
+  version: "0.6.0"
   author: "@wasimness"
   company: "SyncWin"
 ---

@@ -4,7 +4,7 @@ description: Domain skill for WordPress block editor work in Full-Stack WP DevOp
 license: MIT
 metadata:
   displayName: "FSWPDevOps Block Developer"
-  version: "0.5.4"
+  version: "0.6.0"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -28,6 +28,8 @@ blocks/my-block/
 Register from metadata: `register_block_type( __DIR__ . '/build/my-block' )` on `init` (use a named function for the `init` callback). Set `"apiVersion": 3` (current since WordPress 6.3) and add `"$schema": "https://schemas.wp.org/trunk/block.json"`. Field-by-field reference, verified against the Block Editor Handbook: `references/block-json.md`.
 
 ## Decisions
+
+Apply the lean ladder (`fswpdevops/references/lean-coding.md`): core blocks, patterns and Block Bindings before a custom block; note shortcuts as `// shortcut:`.
 
 | Question | Choose |
 |---|---|

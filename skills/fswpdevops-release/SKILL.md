@@ -4,7 +4,7 @@ description: Release and distribution role for Full-Stack WP DevOps. Prepares pl
 license: MIT
 metadata:
   displayName: "FSWPDevOps Release Manager"
-  version: "0.5.4"
+  version: "0.6.0"
   author: "@wasimness"
   company: "SyncWin"
 ---

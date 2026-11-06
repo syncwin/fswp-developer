@@ -4,7 +4,7 @@ description: Planning stage of Full-Stack WP DevOps. Classifies the work (new pl
 license: MIT
 metadata:
   displayName: "FSWPDevOps Architect"
-  version: "0.5.4"
+  version: "0.6.0"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -18,6 +18,8 @@ No code is written until this stage ends with an approved PRD or change brief. G
 - Confirm the work type from `fswpdevops/references/work-types.md`: **New plugin**, **New theme**, **Update**, **Add-on**, **Core patch**.
 - **Update, Add-on, Core patch, or any unknown codebase:** run `python3 scripts/detect_wp_project.py <path>` first. It reports project type (plugin, theme, block theme, Core checkout, site, unknown), main file and header fields, version and minimum-version hints, tooling (Composer, npm, PHPCS, PHPStan, tests), and hooks/REST routes/blocks found. Quote the findings in the plan. The script only reads files.
 - Plugin- or theme-shaped requests count even without the word "plugin" or "theme" (post types, REST integrations, admin dashboards, custom templates, site-wide styling, anything needing activation or uninstall behavior). Single-shortcode tools delivered as FluentSnippets files belong to `wordpress-mini-app-builder`, not here.
+
+Before planning any change, apply the lean ladder (`fswpdevops/references/lean-coding.md`): read the touched code and list every touch point (callers, hooks, templates, tests, config, upgrade paths). The plan's file list is that list; plan the first ladder rung that works and name what you skipped.
 
 ## Step 0a: No PRD yet
 

@@ -2,13 +2,17 @@
 
 Purpose: make working code smaller and simpler without changing behavior. This is an optimization pass, not a release gate, so it does not use confidence scores and does not block shipping.
 
-## Two modes
+Judge against the lean ladder (`fswpdevops/references/lean-coding.md`): for each finding name the higher rung that covers it, including core WordPress APIs before custom code and an existing plugin hook before a new one.
+
+## Three modes
 
 **Line mode** (reviewing a diff or a file): tag each finding on one line.
 
 `L<start>-<end> [category] <what to cut or replace> -> <replacement> (saves ~N lines)`
 
 **Audit mode** (whole plugin/theme): scan every source file, list findings ranked by lines saved, largest first, and finish with the totals.
+
+**Debt mode** (shortcut notes only): list every `// shortcut: <limit>, upgrade when <trigger>` note with file, line, limit and trigger. Flag notes missing a limit or trigger, notes whose trigger has been reached, and shortcuts that touch a never-cut area (validation, escaping, capabilities, data loss, accessibility).
 
 ## Categories
 
