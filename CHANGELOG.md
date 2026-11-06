@@ -1,16 +1,14 @@
 # Changelog
 
-<<<<<<< HEAD
-## [0.5.4] - 2026-11-06
-
-### Added
-- Architect asks "React admin SPA vs native/BEM?" in the question round; reviewer quality lens, security and qa skills point to the matching sections (a11y, security, licensing, tests) of `fswpdevops-plugin/references/modern-app-stack.md`, which already holds the full methodology (no duplicate reference file).
-=======
 ## [Unreleased]
 
 ### Added
 - GitHub Actions workflow `release-plugin.yml` builds `fswpdevops.plugin` and attaches it to each release for a one-click download link (README).
->>>>>>> origin/main
+
+## [0.5.4] - 2026-11-06
+
+### Added
+- Architect asks "React admin SPA vs native/BEM?" in the question round; reviewer quality lens, security and qa skills point to the matching sections (a11y, security, licensing, tests) of `fswpdevops-plugin/references/modern-app-stack.md`, which already holds the full methodology (no duplicate reference file).
 
 ## [0.5.3] - 2026-11-05
 
