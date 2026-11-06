@@ -4,7 +4,7 @@ description: Theme build stage of Full-Stack WP DevOps. Builds custom WordPress 
 license: MIT
 metadata:
   displayName: "FSWPDevOps Theme Developer"
-  version: "0.5.3"
+  version: "0.5.4"
   author: "@wasimness"
   company: "SyncWin"
 ---

@@ -4,7 +4,7 @@ description: Shared WordPress security baseline for Full-Stack WP DevOps. The ru
 license: MIT
 metadata:
   displayName: "FSWPDevOps Security Engineer"
-  version: "0.5.3"
+  version: "0.5.4"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -53,6 +53,7 @@ Escape values you built yourself too. Never rely on "it was sanitized when saved
 - Uploads: `wp_handle_upload` or `wp_check_filetype_and_ext`, size limits, never store in a web-executable path with a user-chosen extension.
 - Outbound requests from input use `wp_safe_remote_*`; redirects from input use `wp_safe_redirect`.
 - Secrets never live in source, and never appear in REST responses, logs, or error messages.
+- React admin SPA plugins: sodium encryption at rest, `composer audit` / `npm audit` every build, and `security.txt`; see `fswpdevops-plugin/references/modern-app-stack.md` section 8. Dependency licenses (no AGPL; MIT/Apache/BSD outside the WP-hooked core) per its licensing note.
 - Every PHP file that is not a class-only file starts with `defined( 'ABSPATH' ) || exit;`.
 
 ## Secure by default (every project; single source, other skills link here)
