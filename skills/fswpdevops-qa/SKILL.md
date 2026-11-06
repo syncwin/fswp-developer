@@ -4,7 +4,7 @@ description: Verification stage of Full-Stack WP DevOps. Runs the mechanical gat
 license: MIT
 metadata:
   displayName: "FSWPDevOps QA Engineer"
-  version: "0.5.3"
+  version: "0.5.4"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -38,6 +38,8 @@ Compare the diff or file list with the approved brief. Files, hooks, options, or
 ## 2. Manual checklist
 
 `references/checklist.md`: only the items a script cannot judge. Run it after the mechanical gate is green.
+
+Tier 3 React admin SPA: also confirm the axe-core CI run, the manual accessibility pass, written gating test scenarios and the dependency license rule from `fswpdevops-plugin/references/modern-app-stack.md` (sections 9, 10, licensing note).
 
 ## 3. Scenario tests
 

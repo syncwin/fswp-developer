@@ -4,7 +4,7 @@ description: Plugin build stage of Full-Stack WP DevOps. House standards and cod
 license: MIT
 metadata:
   displayName: "FSWPDevOps Plugin Developer"
-  version: "0.5.3"
+  version: "0.5.4"
   author: "@wasimness"
   company: "SyncWin"
 ---

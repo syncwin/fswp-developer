@@ -4,7 +4,7 @@ description: Domain skill for WordPress development tooling in Full-Stack WP Dev
 license: MIT
 metadata:
   displayName: "FSWPDevOps DevOps Engineer"
-  version: "0.5.3"
+  version: "0.5.4"
   author: "@wasimness"
   company: "SyncWin"
 ---

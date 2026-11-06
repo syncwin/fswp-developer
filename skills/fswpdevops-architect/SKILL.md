@@ -4,7 +4,7 @@ description: Planning stage of Full-Stack WP DevOps. Classifies the work (new pl
 license: MIT
 metadata:
   displayName: "FSWPDevOps Architect"
-  version: "0.5.3"
+  version: "0.5.4"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -50,6 +50,8 @@ Everything open-ended (field names, business rules, edge cases, working name) is
 **Project information (same round, never a second):** company name, product name, author, contributors, and links (website, docs, support, repo). Ask only for what is not already stated. Never invent a missing value: an unstated link or contributor is left out of every generated file.
 
 **Technology-stack decision:** for new work, decide admin-UI tier and JS tier before drafting the PRD (`fswpdevops-plugin/references/standards.md` section 2). For existing work, the existing stack stands unless there is a stated reason to change it.
+
+**Admin UI question (new plugins with an admin screen):** ask "React admin SPA vs native/BEM?" in the same round. Default is native; offer the React SPA only for an app-like admin (several interactive screens, real-time state, data tables, multi-step flows) and record the answer in the PRD. If React: follow `fswpdevops-plugin/references/modern-app-stack.md` (decision checklist first).
 
 ## Step 2: Competitive research
 

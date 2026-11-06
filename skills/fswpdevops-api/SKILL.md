@@ -4,7 +4,7 @@ description: Domain skill for WordPress REST API and Abilities API work in Full-
 license: MIT
 metadata:
   displayName: "FSWPDevOps API Developer"
-  version: "0.5.3"
+  version: "0.5.4"
   author: "@wasimness"
   company: "SyncWin"
 ---

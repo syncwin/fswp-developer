@@ -34,6 +34,7 @@ Look for defects that pass a linter and fail in production. Score by likelihood 
 
 - User-facing strings not translatable, wrong or missing text domain, concatenated sentences, variables inside `__()`, missing translator comments for placeholders.
 - Missing labels, focus handling, keyboard paths, or contrast in admin screens and front-end output; icon-only controls without accessible names; motion without a reduced-motion path.
+- React admin SPA (Tier 3): WCAG 2.2 AA, axe-core in CI plus a manual pass, non-drag alternative for drag-and-drop; see `fswpdevops-plugin/references/modern-app-stack.md` section 9.
 
 ## 6. PHP correctness patterns
 
