@@ -4,7 +4,7 @@ description: Domain skill for WordPress performance in Full-Stack WP DevOps. Cov
 license: MIT
 metadata:
   displayName: "FSWPDevOps Performance Engineer"
-  version: "0.5.3"
+  version: "0.6.0"
   author: "@wasimness"
   company: "SyncWin"
 ---

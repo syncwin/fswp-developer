@@ -4,7 +4,7 @@ description: Plugin build stage of Full-Stack WP DevOps. House standards and cod
 license: MIT
 metadata:
   displayName: "FSWPDevOps Plugin Developer"
-  version: "0.5.3"
+  version: "0.6.0"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -29,6 +29,8 @@ For changes to an existing plugin, use `fswpdevops-maintainer` instead; it calls
 Admin never uses Atomic Framework or Alpine classes. Never scaffold unused feature classes.
 
 ## Workflow
+
+Apply the lean ladder (`fswpdevops/references/lean-coding.md`) at every step: core WordPress APIs before custom code (Settings API, `WP_List_Table`, `wp_remote_*`, Action Scheduler if present), existing hooks before new ones; note shortcuts as `// shortcut:`.
 
 | Step | Do | House reference | Domain skill |
 |---|---|---|---|

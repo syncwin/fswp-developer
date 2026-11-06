@@ -4,7 +4,7 @@ description: Theme build stage of Full-Stack WP DevOps. Builds custom WordPress 
 license: MIT
 metadata:
   displayName: "FSWPDevOps Theme Developer"
-  version: "0.5.3"
+  version: "0.6.0"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -25,6 +25,8 @@ Executes an approved theme PRD (`fswpdevops-architect`). A theme controls presen
 Default to a block theme for new builds unless the PRD needs otherwise. Block themes need WordPress 5.9 or newer; check the current `theme.json` schema version and its minimum WordPress version in the docs before pinning `Requires at least`.
 
 ## Workflow
+
+Apply the lean ladder (`fswpdevops/references/lean-coding.md`): core blocks, patterns and `theme.json` before custom CSS or templates; note shortcuts as `// shortcut:`.
 
 1. **Scaffold**: `python3 scripts/scaffold_theme.py --help`, then generate the skeleton (block, classic, or child). Run `fswpdevops-qa/scripts/run_gate.sh <dir> <min-php> --fix` once.
 2. **Design tokens**: define palette, typography, spacing, layout widths, and border/shadow presets in `theme.json` (block/hybrid) or in CSS custom properties (classic). Use presets in templates and patterns instead of hard-coded values.

@@ -1,17 +1,23 @@
 # Lean coding (foundational, always applied)
 
-The best code is the code you did not have to write. This skill is a set of decisions made **before** typing, so the result is smaller, simpler, easier to review, and still complete. It never lowers the bar for security, validation, accessibility, or error handling: those are required behavior, not extras.
+The best code is the code you did not have to write. This is the lean ladder: decisions made **before** typing, so the result is smaller, simpler, easier to review, and still complete. Be lazy about the solution, never about completeness. Method adapted from [Ponytail](https://github.com/dietrichgebert/ponytail) by Dietrich Gebert (MIT); wording is original (see `CREDITS.md`).
 
-## The decision ladder (stop at the first rung that answers)
+## Before writing: read and list touch points
 
-1. **Is it in the approved plan?** If not, do not build it. Note it as a suggestion at most.
-2. **Does this project already do it?** Search first (helpers, classes, hooks, options, existing blocks or patterns). Reuse and extend.
-3. **Does WordPress already do it?** Core has APIs for options, settings, HTTP, transients, caching, users, capabilities, media, cron, REST, blocks, scripts, and more. Prefer core over custom code. Check the Code Reference before writing a helper.
-4. **Does PHP or the standard library do it?** Use the built-in.
-5. **Does an installed dependency do it?** Use it; do not add a second one for the same job.
-6. **Only then**, write the smallest code that meets the plan, in the project's style.
+Read the task and the code it touches. List every place the change must reach: callers, hooks that fire or listen, templates, tests, fixtures, config, exports, `readme.txt`, uninstall and upgrade paths. Ask what could break for users (data loss, exposure, callers that stop working). That list is the scope.
 
-Also consider whether the requirement can be met with **no code**: a core block or pattern instead of a custom block, `theme.json` instead of CSS, a setting instead of a template edit, a documented filter instead of a fork.
+## The ladder (take the first rung that fully works)
+
+1. **Does it need to exist?** If the plan does not require it, skip it and say "skipped: X, add when Y". A vague request gets the smallest version that does the core job.
+2. **Reuse the project.** Search helpers, classes, hooks, options, blocks and patterns first. Prefer an existing plugin hook over a new one.
+3. **Core WordPress or PHP provides it.** Core before custom code: Settings API, `WP_List_Table`, `wp_remote_*`, transients, capabilities, REST, cron (Action Scheduler when installed), core blocks and patterns, `theme.json` instead of CSS, a documented filter instead of a fork. See `wordpress-shortcuts.md`.
+4. **An installed dependency provides it.** Never add one for a few lines; weigh size, maintenance, licence and directory rules.
+5. **One readable line.**
+6. **Minimum working code** in the project's style. Add a small test for non-trivial logic (branches, loops, parsers, money, security).
+
+## Never cut
+
+Input validation and sanitizing at trust boundaries, escaping, capability checks and nonces, error handling that prevents data loss, security, accessibility, and anything the user explicitly asked for. Moved or merged code keeps its validation.
 
 ## Rules that keep code small
 
@@ -28,9 +34,9 @@ Also consider whether the requirement can be met with **no code**: a core block 
 
 When you deliberately cut a corner (a loop that is quadratic but the list is capped, a single global lock, a heuristic instead of the exact test), mark it where it lives:
 
-`// shortcut: <the limit>; revisit when <trigger>`
+`// shortcut: <limit>, upgrade when <trigger>`
 
-`fswpdevops-reviewer` collects these markers into a ledger. An unlabeled shortcut is a hidden defect.
+`fswpdevops-reviewer` collects these markers into a ledger (debt mode). An unlabeled shortcut is a hidden defect.
 
 ## Effort levels
 

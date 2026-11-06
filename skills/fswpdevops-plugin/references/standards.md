@@ -87,7 +87,7 @@ This sequences the work; it does not lower the quality bar in section 5. Before 
 
 **Fix causes, not call sites.** A bug report names one failing path. Before patching it, find every caller of the function involved and repair the shared code once. A single guard in the shared function is a smaller change than one per caller, and patching only the reported path leaves sibling callers broken.
 
-**Label knowing shortcuts.** When you deliberately take a shortcut (a quadratic loop over a small list, one global lock, a heuristic in place of the exact check), put `// shortcut: <the limit>; revisit when <trigger>` at that spot. Unlabeled shortcuts become permanent by accident. This is the one case where a comment may state something the code already shows.
+**Label knowing shortcuts.** When you deliberately take a shortcut (a quadratic loop over a small list, one global lock, a heuristic in place of the exact check), put `// shortcut: <limit>, upgrade when <trigger>` at that spot. Unlabeled shortcuts become permanent by accident. This is the one case where a comment may state something the code already shows.
 
 **Abstractions must earn their place.** No interface with one implementation, no factory that makes one thing, no option for a value that never changes. Fewest files that do the job. Plain and explicit beats clever, because the next reader lacks this session's context.
 

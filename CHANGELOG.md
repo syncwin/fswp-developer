@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.6.0] - 2026-11-06
+
+### Added
+- Lean ladder (adapted from Ponytail, MIT) merged into `lean-coding.md`: read and list touch points, six rungs with WordPress rungs (core APIs before custom code, existing plugin hooks before new ones), never-cut list. The lean lens gains a debt mode for shortcut notes. Wired into architect, plugin, theme, block, maintainer and reviewer.
+
+### Changed
+- Shortcut marker format is now `// shortcut: <limit>, upgrade when <trigger>`.
+
 ## [0.5.3] - 2026-11-05
 
 ### Added
