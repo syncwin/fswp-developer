@@ -11,6 +11,8 @@ Load one owner per domain. Roles marked "always on" are loaded by every build sk
 | Theme structure: block, classic, hybrid, child; theme.json, templates, patterns | `fswpdevops-theme` | `scaffold_theme.py` |
 | Changing existing code; add-ons for products you do not own | `fswpdevops-maintainer` | Parity, deprecation, host compatibility |
 | Core patches, Trac, wordpress-develop, Core tests | `fswpdevops-core` | Ticket-first |
+| Design language: theme.json tokens, patterns, native-first, states, respecting a site's existing look | `fswpdevops-designer` | `references/design-language.md` |
+| Design and UX critique of finished UI (read-only) | `fswpdevops-critic` | `references/ux-rubric.md` |
 | Custom blocks, block.json, dynamic rendering, patterns, Interactivity API | `fswpdevops-block` | `references/block-json.md` verified against the handbook |
 | REST routes, schemas, permissions, Abilities API register/audit/verify | `fswpdevops-api` | |
 | Queries, caching, assets, autoload, cron, profiling | `fswpdevops-performance` | |

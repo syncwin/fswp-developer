@@ -1,10 +1,10 @@
 ---
 name: fswpdevops
-description: Full-Stack WP DevOps - the entry point and router for the whole WordPress development lifecycle. Use whenever the user wants to build a custom theme (block or classic) or plugin, update or fix an existing theme or plugin, create an add-on for another product (WooCommerce extension, page-builder element, plugin extension), contribute a patch to WordPress Core, or review, secure, optimize, or ship WordPress code; also when they invoke /fswpdevops. Classifies the work, then sequences fswpdevops-architect, a build skill (fswpdevops-plugin, fswpdevops-theme, fswpdevops-maintainer, fswpdevops-core), fswpdevops-qa, and fswpdevops-reviewer, backed by role skills for security, blocks, APIs, performance, tooling, and release, on top of the always-applied lean-coding and coding-standards references this skill owns. Not for single-shortcode FluentSnippets tools (that is wordpress-mini-app-builder).
+description: Full-Stack WP DevOps - the entry point and router for the whole WordPress development lifecycle. Use whenever the user wants to build a custom theme (block or classic) or plugin, update or fix an existing theme or plugin, create an add-on for another product (WooCommerce extension, page-builder element, plugin extension), contribute a patch to WordPress Core, or review, secure, optimize, or ship WordPress code; also when they invoke /fswpdevops. Classifies the work, then sequences fswpdevops-architect, a build skill (fswpdevops-plugin, fswpdevops-theme, fswpdevops-maintainer, fswpdevops-core), fswpdevops-qa, fswpdevops-critic (UI work), and fswpdevops-reviewer, backed by role skills for security, blocks, APIs, performance, tooling, and release, on top of the always-applied lean-coding and coding-standards references this skill owns. Not for single-shortcode FluentSnippets tools (that is wordpress-mini-app-builder).
 license: MIT
 metadata:
   displayName: "Full-Stack WP DevOps"
-  version: "0.6.2"
+  version: "0.7.0"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -35,9 +35,10 @@ Unclear or mixed? Ask one question. Details: `references/work-types.md`.
 1. **`fswpdevops-architect`**: triage the code (Update, Add-on, Core), one question round, research, PRD or change brief, the single approval gate. Includes the brand-prefix decision (`references/brand-naming.md`).
 2. **Build skill** from the table. `references/lean-coding.md`, `references/coding-standards.md`, and `fswpdevops-security` are foundational and always applied. Load other role skills only for the domains the plan lists (`references/domain-map.md`).
 3. **`fswpdevops-qa`**: mechanical gate, tool checks, checklist, scenarios, scope check. Every result is PASS, FAIL, or NOT RUN; NOT RUN is never reported as a pass.
-4. **`fswpdevops-reviewer`**: independent read-only review. In Claude Code delegate to the `fswpdevops-code-reviewer` agent so build reasoning stays out; without agents, run it as a separate pass and disclose it as a self-review.
-5. **Fix loop**: fix every Critical and Important finding from steps 3 and 4, then re-run 3 and 4 on the changed files only.
-6. **Ship**: `fswpdevops-release` when the target is a directory or a release; then deliver the zip, patch, or PR-ready diff with a short summary.
+4. **`fswpdevops-critic`** (only when the change has UI): read-only design and UX critique of rendered front end, block editor and admin screens, after the build and before the reviewer; structured findings with severity, evidence and fix. Builders fix what it finds.
+5. **`fswpdevops-reviewer`**: independent read-only review. In Claude Code delegate to the `fswpdevops-code-reviewer` agent so build reasoning stays out; without agents, run it as a separate pass and disclose it as a self-review.
+6. **Fix loop**: fix every Critical and Important finding from steps 3 to 5, then re-run 3 to 5 on the changed files only.
+7. **Ship**: `fswpdevops-release` when the target is a directory or a release; then deliver the zip, patch, or PR-ready diff with a short summary.
 
 ## Selection rules
 
@@ -68,7 +69,7 @@ External workflows may rely on these; they change only with an old-to-new mappin
 
 - Plugin slug `fswpdevops`; this router skill is `fswpdevops` because every skill name in this plugin begins with `fswpdevops-` to avoid collisions.
 - Trigger: `/fswpdevops`, and plain-language WordPress build/update/review requests.
-- Skills: `fswpdevops-architect`, `fswpdevops-plugin`, `fswpdevops-theme`, `fswpdevops-maintainer`, `fswpdevops-core`, `fswpdevops-qa`, `fswpdevops-reviewer`, `fswpdevops-release`, `fswpdevops-security`, `fswpdevops-api`, `fswpdevops-block`, `fswpdevops-performance`, `fswpdevops-ci`; agent `fswpdevops-code-reviewer`.
+- Skills: `fswpdevops-architect`, `fswpdevops-plugin`, `fswpdevops-theme`, `fswpdevops-maintainer`, `fswpdevops-core`, `fswpdevops-qa`, `fswpdevops-reviewer`, `fswpdevops-release`, `fswpdevops-security`, `fswpdevops-api`, `fswpdevops-block`, `fswpdevops-designer`, `fswpdevops-critic`, `fswpdevops-performance`, `fswpdevops-ci`; agent `fswpdevops-code-reviewer`.
 - Foundational references (not separate skills): `references/lean-coding.md`, `references/coding-standards.md`.
 - Result vocabulary: PASS, FAIL, NOT RUN.
 - 0.1.x, 0.2.x, and 0.3.x names map to these in `CHANGELOG.md`.

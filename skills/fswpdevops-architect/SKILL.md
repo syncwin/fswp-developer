@@ -4,7 +4,7 @@ description: Planning stage of Full-Stack WP DevOps. Classifies the work (new pl
 license: MIT
 metadata:
   displayName: "FSWPDevOps Architect"
-  version: "0.6.2"
+  version: "0.7.0"
   author: "@wasimness"
   company: "SyncWin"
 ---

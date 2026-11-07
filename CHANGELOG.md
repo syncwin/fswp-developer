@@ -5,6 +5,13 @@
 ### Added
 - GitHub Actions workflow `release-plugin.yml` builds `fswpdevops.plugin` and attaches it to each release for a one-click download link (README).
 
+## [0.7.0] - 2026-11-07
+
+### Added
+- `fswpdevops-designer`: WordPress design language (theme.json tokens, block patterns, native-first, states, respects a site's existing design language); `references/design-language.md`.
+- `fswpdevops-critic`: read-only design and UX critique stage (heuristics, hierarchy, consistency, block editor UX, states, a11y, copy) with severity, evidence, fix, confidence >= 80 and a one-line verdict; runs after the build and before the reviewer; `references/ux-rubric.md`.
+- `evals/evals.json` with trigger evals for both skills.
+
 ## [0.6.2] - 2026-11-07
 
 ### Added

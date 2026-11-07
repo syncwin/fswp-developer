@@ -11,7 +11,7 @@ Trigger with `/fswpdevops`, or just describe the job in plain language. Every sk
 ## How it works
 
 ```
-classify → fswpdevops-architect → build role (plugin | theme | maintain | core) → fswpdevops-qa → fswpdevops-reviewer → fix loop → fswpdevops-release → deliver
+classify → fswpdevops-architect → build role (plugin | theme | maintain | core) → fswpdevops-qa → fswpdevops-critic (UI) → fswpdevops-reviewer → fix loop → fswpdevops-release → deliver
 ```
 
 Always on during any build: `fswpdevops/references/lean-coding.md` (write less, reuse first), `fswpdevops/references/coding-standards.md` (coding standards, docs, i18n, accessibility), `fswpdevops-security` (input, output, authorization).
@@ -25,6 +25,8 @@ Always on during any build: `fswpdevops/references/lean-coding.md` (write less, 
 | `fswpdevops-maintainer` | Safe changes to existing plugins/themes; add-on structure and host compatibility |
 | `fswpdevops-core` | Trac ticket, wordpress-develop setup, patch or PR, tests, ticket comment |
 | `fswpdevops-qa` | Plugin and theme gates, PHPCS, PHPStan, checklist, scenarios, scope check |
+| `fswpdevops-designer` | Design language: theme.json tokens, block patterns, native-first, states, the site's existing look |
+| `fswpdevops-critic` | Read-only design and UX critique of finished UI, after the build and before the reviewer |
 | `fswpdevops-reviewer` | Independent security, quality, and lean review (agent `fswpdevops-code-reviewer`) |
 | `fswpdevops-release` | WordPress.org guidelines, headers, readme, versioning, packaging |
 | `fswpdevops-security` | Sanitize/escape tables, authorization, nonces |
