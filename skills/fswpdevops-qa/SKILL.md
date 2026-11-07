@@ -4,7 +4,7 @@ description: Verification stage of Full-Stack WP DevOps. Runs the mechanical gat
 license: MIT
 metadata:
   displayName: "FSWPDevOps QA Engineer"
-  version: "0.6.1"
+  version: "0.6.2"
   author: "@wasimness"
   company: "SyncWin"
 ---
@@ -15,9 +15,11 @@ Verify the built folder, do not fix during gating. Report first, then fix in the
 
 ## 1. Mechanical gate
 
+Copy `scripts/` once per session to `./tools/` (E9) and run from there.
+
 ```
-bash scripts/setup_toolchain.sh              # once per environment (apt + GitHub only, no Composer) — versions, SHA-256 and commit SHAs are pinned in scripts/toolchain.lock; the gate FAILS (not NOT RUN) when an installed phar mismatches, re-run setup_toolchain.sh
-bash scripts/run_gate.sh <dir> [min-php] [--fix]
+bash tools/setup_toolchain.sh              # once per environment (apt + GitHub only, no Composer) — versions, SHA-256 and commit SHAs are pinned in scripts/toolchain.lock; the gate FAILS (not NOT RUN) when an installed phar mismatches, re-run setup_toolchain.sh
+bash tools/run_gate.sh <dir> [min-php] [--fix]
 ```
 
 `run_gate.sh` detects a theme (a `style.css` with a Theme Name header) and runs `scripts/theme_check.py`; otherwise it runs `scripts/qa_check.py`. Both use Python's standard library only and always work. Then it adds, where PHP and the tools exist: `php -l`, PHPCS `WordPress-Extra` (errors fail, warnings are listed), PHP compatibility for the minimum PHP, and PHPStan level 5 with WordPress stubs.
