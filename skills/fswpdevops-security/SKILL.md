@@ -4,7 +4,7 @@ description: Shared WordPress security baseline for Full-Stack WP DevOps. The ru
 license: MIT
 metadata:
   displayName: "FSWPDevOps Security Engineer"
-  version: "0.6.1"
+  version: "0.7.0"
   author: "@wasimness"
   company: "SyncWin"
 ---

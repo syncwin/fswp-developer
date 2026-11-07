@@ -4,7 +4,7 @@ description: Independent review stage of Full-Stack WP DevOps. Reviews a finishe
 license: MIT
 metadata:
   displayName: "FSWPDevOps Reviewer"
-  version: "0.6.1"
+  version: "0.7.0"
   author: "@wasimness"
   company: "SyncWin"
 ---

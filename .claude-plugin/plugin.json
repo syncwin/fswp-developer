@@ -1,7 +1,7 @@
 {
   "name": "fswpdevops",
   "displayName": "Full-Stack WP DevOps",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "description": "Full-Stack WP DevOps: plan, build, extend, verify, and review WordPress themes, plugins, add-ons, and Core patches across the full development lifecycle.",
   "author": {
     "name": "@wasimness",
@@ -33,7 +33,7 @@
   "termsOfServiceUrl": "https://syncwin.com/terms-and-conditions/",
   "metadata": {
     "displayName": "Full-Stack WP DevOps",
-    "version": "0.6.1",
+    "version": "0.7.0",
     "releaseStage": "beta",
     "author": "@wasimness",
     "company": "SyncWin",
