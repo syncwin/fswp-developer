@@ -34,7 +34,7 @@ Apply the lean ladder (`fswpdevops/references/lean-coding.md`) at every step: co
 
 | Step | Do | House reference | Domain skill |
 |---|---|---|---|
-| 1 Scaffold | Derive slug, prefix, class names, text domain; run `scripts/scaffold_plugin.py --help` first. Pass `--plugin-uri` and `--author-uri` only if real (the line is dropped otherwise, never a placeholder domain). **Run `fswpdevops-qa/scripts/run_gate.sh <dir> <min-php> --fix` once right after scaffolding**: templates carry `{{...}}` placeholders that the formatter cannot safely reflow before substitution. | `architecture.md` | none |
+| 1 Scaffold | Derive slug, prefix, class names, text domain; copy `scripts/` once per session to `./tools/` (E9), run `tools/scaffold_plugin.py --help` first. Pass `--plugin-uri` and `--author-uri` only if real (the line is dropped otherwise, never a placeholder domain). **Run `fswpdevops-qa/scripts/run_gate.sh <dir> <min-php> --fix` once right after scaffolding**: templates carry `{{...}}` placeholders that the formatter cannot safely reflow before substitution. | `architecture.md` | none |
 | 2 Bootstrap + lifecycle | Bootstrap declares the header, autoload, and hands off to the main class | `architecture.md` | none |
 | 3 Security | Full baseline on every file, every plugin size | `fswpdevops-security` | `fswpdevops-security` |
 | 4 Domain | CPTs, tables (`dbDelta`, schema versions), REST, cron | `data-cpt.md`, `rest-cron.md` | `fswpdevops-api`; `fswpdevops-performance` when the PRD needs it |

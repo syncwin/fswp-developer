@@ -28,7 +28,7 @@ Default to a block theme for new builds unless the PRD needs otherwise. Block th
 
 Apply the lean ladder (`fswpdevops/references/lean-coding.md`): core blocks, patterns and `theme.json` before custom CSS or templates; note shortcuts as `// shortcut:`. Research before building: apply the router's Official first rule.
 
-1. **Scaffold**: `python3 scripts/scaffold_theme.py --help`, then generate the skeleton (block, classic, or child). Run `fswpdevops-qa/scripts/run_gate.sh <dir> <min-php> --fix` once.
+1. **Scaffold**: `python3 tools/scaffold_theme.py --help` (copy `scripts/` to `./tools/` once per session, E9), then generate the skeleton (block, classic, or child). Run `fswpdevops-qa/scripts/run_gate.sh <dir> <min-php> --fix` once.
 2. **Design tokens**: define palette, typography, spacing, layout widths, and border/shadow presets in `theme.json` (block/hybrid) or in CSS custom properties (classic). Use presets in templates and patterns instead of hard-coded values.
 3. **Templates**: build the hierarchy the PRD needs (front page, home, single, page, archive, search, 404, plus any custom templates). Reuse template parts for header, footer, and repeated sections.
 4. **Patterns**: register reusable layouts as files in `patterns/` (header comment: Title, Slug, Categories, optional Keywords, Viewport Width, Block Types). No remote images.

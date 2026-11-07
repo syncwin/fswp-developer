@@ -12,6 +12,14 @@
 - `fswpdevops-critic`: read-only design and UX critique stage (heuristics, hierarchy, consistency, block editor UX, states, a11y, copy) with severity, evidence, fix, confidence >= 80 and a one-line verdict; runs after the build and before the reviewer; `references/ux-rubric.md`.
 - `evals/evals.json` with trigger evals for both skills.
 
+## [0.6.2] - 2026-11-07
+
+### Added
+- Shared rules in `references/lean-coding.md`: E1 (native WordPress and plugin features first, check official docs, custom code only when nothing native exists), E7 (learn the site's existing stack and settings before building so nothing breaks and its setup and design language are respected), E9 (skills that run scripts copy them once per session into `./tools/` and run from there; never use a `/root/.claude` or `~/.claude` path in a shell command).
+
+### Fixed
+- E9: qa, architect, plugin and theme skills now run their scripts from `./tools/` instead of a skill-relative path.
+
 ## [0.6.1] - 2026-11-06
 
 ### Changed
