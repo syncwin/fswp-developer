@@ -46,6 +46,12 @@ When you deliberately cut a corner (a loop that is quadratic but the list is cap
 | **Quick draft** | The user wants something to react to | Build what was asked; name the simpler alternative in one line |
 | **Leanest** | The user asks for minimal or the plan looks speculative | Challenge each optional line of the plan before building, ship the smallest thing that satisfies the rest, list what was deferred. Never cut what the plan states plainly |
 
+## Site and script rules (shared)
+
+- **E1, native first.** Use WordPress and the site's installed plugins' native features first and check their official docs; write custom code only when nothing native exists.
+- **E7, learn the site before building.** Before any build, learn the site's existing stack and settings (active theme, plugins, builder, global styles) so nothing breaks and the site's setup and design language are respected.
+- **E9, script paths.** Skills that run scripts copy them once per session into the working folder (e.g. `./tools/`) and run from there; never put a `/root/.claude` or `~/.claude` path in a shell command.
+
 ## Keep agents narrow
 
 The same idea applies to how work is delegated: each agent gets one job, the smallest toolset that does it, and only the files it needs. The reviewer agent reads only; it never edits. Do not give agents open-ended scope, do not have two agents repeat the same analysis, and pass forward results instead of re-deriving them. Keep chat replies short too: lead with the result, list only decisions and open items.

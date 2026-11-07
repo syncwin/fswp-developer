@@ -4,7 +4,7 @@ description: Change stage for existing WordPress code in Full-Stack WP DevOps. U
 license: MIT
 metadata:
   displayName: "FSWPDevOps Maintainer"
-  version: "0.6.1"
+  version: "0.6.2"
   author: "@wasimness"
   company: "SyncWin"
 ---
