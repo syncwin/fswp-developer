@@ -13,7 +13,7 @@ Over-building is the commonest waste in agent-written code. One shared rule now 
 - Review lens modes: line, audit, debt.
 
 ## How it works
-Single source: `skills/fswpdevops/references/lean-coding.md`. Used by `fswpdevops-architect`, the plugin, theme and block skills, `fswpdevops-maintainer`, and the lean lens of `fswpdevops-reviewer`.
+Single source: `skills/fswpdevops/references/lean-coding.md`. Used by `fswpdevops-plan`, the plugin, theme and block skills, `fswpdevops-maintain`, and the lean lens of `fswpdevops-review`.
 
 ## Limits
 Guidance for the model; no script enforces it.

@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: A skill gave wrong guidance or a script failed
+about: A skill or recipe gave wrong guidance
 ---
 
 **Skill or script:**

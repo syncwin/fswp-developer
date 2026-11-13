@@ -1,6 +1,6 @@
 # Full-Stack WP DevOps
 
-A Claude plugin covering the whole WordPress development lifecycle. Say what you want built or changed; it classifies the work, plans it, builds it, runs a mechanical QA gate, and hands the result to an independent reviewer.
+A Claude plugin covering the whole WordPress development lifecycle. Say what you want built or changed; it routes the work, plans it, builds it, runs a mechanical QA gate, and hands the result to an independent reviewer.
 
 **Download:** [fswpdevops.plugin](https://github.com/syncwin/fswpdevops/releases/latest/download/fswpdevops.plugin) (always the latest release)
 
@@ -11,23 +11,23 @@ Trigger with `/fswpdevops`, or just describe the job in plain language. Every sk
 ## How it works
 
 ```
-classify → fswpdevops-architect → build role (plugin | theme | maintain | core) → fswpdevops-qa → fswpdevops-critic (UI) → fswpdevops-reviewer → fix loop → fswpdevops-release → deliver
+route → fswpdevops-plan → build role (plugin | theme | maintain | core) → fswpdevops-qa → fswpdevops-critic (UI) → fswpdevops-review → fix loop → fswpdevops-release → deliver
 ```
 
 Always on during any build: `fswpdevops/references/lean-coding.md` (write less, reuse first), `fswpdevops/references/coding-standards.md` (coding standards, docs, i18n, accessibility), `fswpdevops-security` (input, output, authorization).
 
 | Skill | Role |
 |---|---|
-| `fswpdevops` | Router: classifies the work and sequences the rest |
-| `fswpdevops-architect` | Triage, one question round, research, PRD or change brief, one approval gate |
-| `fswpdevops-plugin` | New plugins: scaffold script, lifecycle, data, REST, admin UI, front-end, i18n |
-| `fswpdevops-theme` | New themes: block, classic, child; scaffold script; theme.json, templates, patterns |
-| `fswpdevops-maintainer` | Safe changes to existing plugins/themes; add-on structure and host compatibility |
+| `fswpdevops` | Router: routing table picks the skill and sequences the rest |
+| `fswpdevops-plan` | Triage, one question round, research, PRD or change brief, one approval gate |
+| `fswpdevops-plugin` | New plugins: scaffold recipe and templates, lifecycle, data, REST, admin UI, front-end, i18n |
+| `fswpdevops-theme` | New themes: block, classic, child; scaffold recipe; theme.json, templates, patterns |
+| `fswpdevops-maintain` | Safe changes to existing plugins/themes; add-on structure and host compatibility |
 | `fswpdevops-core` | Trac ticket, wordpress-develop setup, patch or PR, tests, ticket comment |
 | `fswpdevops-qa` | Plugin and theme gates, PHPCS, PHPStan, checklist, scenarios, scope check |
-| `fswpdevops-designer` | Design language: theme.json tokens, block patterns, native-first, states, the site's existing look |
+| `fswpdevops-design` | Design language: theme.json tokens, block patterns, native-first, states, the site's existing look |
 | `fswpdevops-critic` | Read-only design and UX critique of finished UI, after the build and before the reviewer |
-| `fswpdevops-reviewer` | Independent security, quality, and lean review (agent `fswpdevops-code-reviewer`) |
+| `fswpdevops-review` | Independent security, quality, and lean review (agent `fswpdevops-code-review`) |
 | `fswpdevops-release` | WordPress.org guidelines, headers, readme, versioning, packaging |
 | `fswpdevops-security` | Sanitize/escape tables, authorization, nonces |
 | `fswpdevops/references/coding-standards.md` | PHP/JS/CSS/HTML standards, PHPDoc, i18n, accessibility |
@@ -37,25 +37,25 @@ Always on during any build: `fswpdevops/references/lean-coding.md` (write less, 
 | `fswpdevops-ci` | wp-env, Playground, command line, PHPCS/PHPStan setup |
 | `fswpdevops/references/lean-coding.md` | Decide what not to write, before every build |
 
-Official WordPress documentation is linked, not copied: `skills/fswpdevops/references/official-docs.md`. Verified pages (fetched and read on 2026-09-28) are marked "(checked)" there; others are canonical paths, confirmed on first real use.
+Official WordPress documentation is linked, not copied: `adapters/claude/skills/fswpdevops/references/official-docs.md`. Verified pages (fetched and read on 2026-09-28) are marked "(checked)" there; others are canonical paths, confirmed on first real use.
 
 ## Install
 
 - **claude.ai, desktop app, mobile (auto-updates):** Settings → Customize → Plugins → Add → Add marketplace → `syncwin/fswpdevops`, then install Full-Stack WP DevOps.
 - **Claude Code terminal (instead of the app):** `claude plugin marketplace add syncwin/fswpdevops`, then `claude plugin install fswpdevops@syncwin-fswpdevops`.
 
-Or locally: unzip and run `claude --plugin-dir ./fswpdevops`. No external dependencies; PHP-based checks report NOT RUN with the exact command to run when PHP is missing.
+Or locally: unzip and run `claude --plugin-dir ./fswpdevops`, or from a clone `claude --plugin-dir ./adapters/claude`. No external dependencies; PHP-based checks report NOT RUN with the exact command to run when PHP is missing.
 
-## Tools you can run yourself
+## Layout
 
-```bash
-python3 skills/fswpdevops-architect/scripts/detect_wp_project.py <folder>          # what kind of project is this?
-python3 skills/fswpdevops-theme/scripts/scaffold_theme.py --help         # block, classic, or child theme
-python3 skills/fswpdevops-plugin/scripts/scaffold_plugin.py --help       # plugin skeleton
-bash skills/fswpdevops-qa/scripts/setup_toolchain.sh                      # once: PHPCS + PHPStan without Composer
-bash skills/fswpdevops-qa/scripts/run_gate.sh <folder> [min-php] [--fix]  # full gate for a plugin or theme
-python3 skills/fswpdevops-qa/scripts/theme_check.py <theme-dir> [--directory]
 ```
+adapters/claude/      the Claude plugin, text only: .claude-plugin, skills (with recipes), agents, evals, prompts, README, CHANGELOG, LICENSE
+dev/                  maintainer-only Python and shell tools and the plugin template files, never shipped
+docs/                 maintainer docs and icons (docs/assets/)
+.claude-plugin/marketplace.json   points to adapters/claude
+```
+
+`main` is the only branch and the source for the Anthropic plugin directory. The shipped plugin has no hooks, scripts or other non-text files. What used to be scripts are recipes Claude follows in `adapters/claude/skills/*/references/`: `detect_wp_project`, `scaffold_plugin` (with the `templates-*` files), `scaffold_theme` (with `scaffold_theme_files`), `qa_check`, `theme_check`, `docs_gate`, `run_gate` and `setup_toolchain`. The Python and shell originals stay in `dev/` as maintainer tooling.
 
 ## Honest limits
 

@@ -2,7 +2,7 @@
 
 ## Reporting a vulnerability in this plugin
 
-The package contains instructions and helper scripts (`qa_check.py`, `theme_check.py`, `detect_wp_project.py`, `scaffold_plugin.py`, `scaffold_theme.py`, `setup_toolchain.sh`, `run_gate.sh`). If you find a flaw in one of them, or guidance that would steer generated code toward an insecure pattern, email **support@syncwin.com** with the subject "Security". Include the file, what you saw, and how to reproduce it. Please do not open a public issue first. Expect an acknowledgement, then a fix and a CHANGELOG entry.
+The package contains instructions and recipes (`qa_check`, `theme_check`, `docs_gate`, `run_gate`, `setup_toolchain`, `detect_wp_project`, `scaffold_plugin`, `scaffold_theme`); the maintainer scripts they came from live in `dev/`. If you find a flaw in one of them, or guidance that would steer generated code toward an insecure pattern, email **support@syncwin.com** with the subject "Security". Include the file, what you saw, and how to reproduce it. Please do not open a public issue first. Expect an acknowledgement, then a fix and a CHANGELOG entry.
 
 ## Vulnerabilities in WordPress itself
 

@@ -1,0 +1,34 @@
+*.plugin
+*.pyc
+*.zip
+.DS_Store
+.env
+__pycache__/
+dist/
+
+# --- public-safety preset: private data never reaches git ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+credentials*.json
+service-account*.json
+secrets.*
+*.log
+logs/
+memory/
+.claude/memory/
+.claude/progress/
+progress*.md
+*.local.md
+.claude/settings.local.json
+.npmrc
+.pypirc
+.netrc
+private/
+# --- end public-safety preset ---
