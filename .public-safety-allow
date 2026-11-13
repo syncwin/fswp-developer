@@ -1,0 +1,21 @@
+# False positives for scan_secrets.py. Only exact, intentional values, each tied to the file that holds it.
+# Format: <rule>:<path-glob>[:<value-substring>]
+# The plugin's public support address (it is the published contact, not personal data):
+email:README.md:support@syncwin.com
+email:SECURITY.md:support@syncwin.com
+email:CONTRIBUTING.md:support@syncwin.com
+email:.claude-plugin/marketplace.json:support@syncwin.com
+email:adapters/claude/.claude-plugin/plugin.json:support@syncwin.com
+email:.public-safety-allow:support@syncwin.com
+# Changelog history lines and the WordPress.org plugin team's public contact address in the guidelines summary:
+email:CHANGELOG.md:support@syncwin.com
+email:adapters/claude/CHANGELOG.md:support@syncwin.com
+email:adapters/claude/skills/fswpdevops-release/references/plugin-guidelines.md:plugins@wordpress.org
+email:.public-safety-allow:plugins@wordpress.org
+# Older docs that name the same public support address:
+email:HANDOFF.md:support@syncwin.com
+email:docs/github-integration.md:support@syncwin.com
+# Git history only (old commits and old paths before the 0.8.0 move, no history rewrite; the public contact, a public WordPress.org team address and a folder path, no credential involved):
+drive-path:AGENTS.md:A:\Automation
+email:.claude-plugin/plugin.json:support@syncwin.com
+email:skills/fswp-release-manager/references/plugin-guidelines.md:plugins@wordpress.org

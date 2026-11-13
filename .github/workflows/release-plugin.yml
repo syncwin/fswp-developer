@@ -22,7 +22,7 @@ jobs:
     env:
       NAME: "Full Stack WP DevOps"
       ASSET: fswpdevops.plugin
-      ROOT: .
+      ROOT: adapters/claude
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -35,7 +35,7 @@ jobs:
           root, asset = os.environ["ROOT"], os.environ["ASSET"]
           version = json.load(open(os.path.join(root, ".claude-plugin", "plugin.json"), encoding="utf-8"))["version"]
           skip_dirs = {".git", ".github", ".claude", "tests", "node_modules", "__pycache__", "evals", "prompts", "dist"}
-          skip_files = {"IMPROVEMENTS.md"}
+          skip_files = {"IMPROVEMENTS.md", ".public-safety-allow"}
           os.makedirs("dist", exist_ok=True)
           out = os.path.join(os.getcwd(), "dist", asset)
           if os.path.exists(out):
@@ -48,8 +48,14 @@ jobs:
                           continue
                       p = os.path.join(d, f)
                       z.write(p, os.path.relpath(p, root).replace(os.sep, "/"))
+          text_ext = {".md", ".json", ".yaml", ".yml", ".txt"}
+          text_names = {"LICENSE", ".gitignore"}
           with zipfile.ZipFile(out) as z:
-              assert ".claude-plugin/plugin.json" in z.namelist(), "plugin.json missing at zip root"
+              names = z.namelist()
+              assert ".claude-plugin/plugin.json" in names, "plugin.json missing at zip root"
+              bad = [n for n in names if os.path.splitext(n)[1].lower() not in text_ext and os.path.basename(n) not in text_names]
+              assert not bad, "non-text files must not ship: " + ", ".join(bad)
+              assert not [n for n in names if n.split("/")[0] in ("hooks", "scripts")], "hooks and scripts must not ship"
           with open(os.environ.get("GITHUB_OUTPUT", os.devnull), "a") as g:
               g.write("version=" + version + "\n")
           print("built", out, "version", version)

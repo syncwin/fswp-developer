@@ -1,0 +1,8 @@
+# False positives for scan_secrets.py when the plugin folder is scanned on its own. Not packaged.
+# The plugin's public support address in its author entry (the published contact, not personal data):
+email:.claude-plugin/plugin.json:support@syncwin.com
+email:.public-safety-allow:support@syncwin.com
+# Changelog history lines and the WordPress.org plugin team's public contact address in the guidelines summary:
+email:CHANGELOG.md:support@syncwin.com
+email:skills/fswpdevops-release/references/plugin-guidelines.md:plugins@wordpress.org
+email:.public-safety-allow:plugins@wordpress.org

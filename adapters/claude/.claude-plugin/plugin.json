@@ -1,0 +1,43 @@
+{
+  "name": "fswpdevops",
+  "displayName": "Full-Stack WP DevOps",
+  "version": "0.8.0",
+  "description": "Full-Stack WP DevOps: plan, build, extend, verify, and review WordPress themes, plugins, add-ons, and Core patches across the full development lifecycle.",
+  "author": {
+    "name": "@wasimness",
+    "company": "SyncWin",
+    "email": "support@syncwin.com",
+    "url": "https://syncwin.com"
+  },
+  "homepage": "https://syncwin.com",
+  "license": "MIT",
+  "keywords": [
+    "wordpress",
+    "wp",
+    "theme",
+    "plugin",
+    "block-theme",
+    "addon",
+    "wordpress-core",
+    "php",
+    "security",
+    "qa",
+    "code-review",
+    "SyncWin"
+  ],
+  "repository": "https://github.com/syncwin/fswpdevops",
+  "documentationUrl": "https://github.com/syncwin/fswpdevops#readme",
+  "supportUrl": "https://github.com/syncwin/fswpdevops/issues",
+  "privacyPolicyUrl": "https://syncwin.com/privacy-policy/",
+  "termsOfServiceUrl": "https://syncwin.com/terms-and-conditions/",
+  "metadata": {
+    "displayName": "Full-Stack WP DevOps",
+    "version": "0.8.0",
+    "releaseStage": "beta",
+    "author": "@wasimness",
+    "company": "SyncWin",
+    "homepage": "https://syncwin.com",
+    "repository": "https://github.com/syncwin/fswpdevops",
+    "license": "MIT"
+  }
+}

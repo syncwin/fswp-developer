@@ -1,8 +1,23 @@
 # Changelog
 
-## [Unreleased]
+## [0.8.0] - 2026-11-13
+
+### Changed
+- Single `main` branch layout for the Anthropic plugin directory: the shipped plugin moved to `adapters/claude/` (`.claude-plugin/plugin.json`, `skills/`, `agents/`, `prompts/`, `evals/`, README, CHANGELOG, LICENSE, PUBLIC-SAFETY.md); the root `.claude-plugin/marketplace.json` points to it (`source: ./adapters/claude`). `icon.png` and `icon.svg` moved to `docs/assets/`; the plugin manifest no longer declares an icon file.
+- Renamed skills and agent to the directory naming standard (action-style, `fswpdevops-` prefix): `fswpdevops-architect` to `fswpdevops-plan`, `fswpdevops-maintainer` to `fswpdevops-maintain`, `fswpdevops-reviewer` to `fswpdevops-review`, `fswpdevops-designer` to `fswpdevops-design`; agent `fswpdevops-code-reviewer` to `fswpdevops-code-review`. All references, evals and docs updated.
+- Skill and agent frontmatter is text only (`name`, `description`, plus the agent's `tools` and `skills`); the `license` and `metadata` maps were removed. The plugin version lives in `plugin.json` and `marketplace.json`.
+- Router `fswpdevops` has a routing table (`Order | Trigger phrases | Skill | Then`, first match wins), tie-break rules, a default closed question and Skill-tool loading as `fswpdevops:<skill>`; router cases in `adapters/claude/evals/router/cases.json`. Trigger evals moved from the root `evals/` to `adapters/claude/evals/`.
+- Release workflow zips `adapters/claude` (the plugin root) and refuses hooks, scripts and non-text files.
+- E9 in `lean-coding.md` no longer tells skills to copy shipped scripts; the plugin ships none.
+
+### Removed
+- Scripts and other non-text files from the shipped plugin. The Python and shell tools (`detect_wp_project.py`, `scaffold_plugin.py`, `scaffold_theme.py`, `qa_check.py`, `theme_check.py`, `docs_gate.py`, `run_gate.sh`, `setup_toolchain.sh`, `toolchain.lock`) and the 16 PHP, JS, CSS and text template files plus `README-private.md` moved unchanged to `dev/` (maintainer tooling, not shipped).
 
 ### Added
+- Recipes that Claude follows with Read, Glob, Grep and Bash, replacing the scripts: `detect_wp_project.md` (`fswpdevops-plan`), `scaffold_plugin.md` (`fswpdevops-plugin`), `scaffold_theme.md` and `scaffold_theme_files.md` (`fswpdevops-theme`), `qa_check.md`, `theme_check.md`, `docs_gate.md`, `run_gate.md` and `setup_toolchain.md` (`fswpdevops-qa`, with the pinned tool versions, hashes and commits from `toolchain.lock`).
+- The plugin templates as Markdown references with fenced files and target paths: `templates-core.md`, `templates-features.md`, `templates-ui.md`, `templates-readme.md` in `fswpdevops-plugin/references/` (byte-identical to `dev/templates/`).
+- `adapters/claude/evals/router/cases.json` (33 cases, at least two per skill, plus ambiguous prompts that expect the closed question).
+- `PUBLIC-SAFETY.md`, the public-safety `.gitignore` preset and `.public-safety-allow` (the plugin's public support address).
 - GitHub Actions workflow `release-plugin.yml` builds `fswpdevops.plugin` and attaches it to each release for a one-click download link (README).
 
 ## [0.7.0] - 2026-11-07

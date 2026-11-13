@@ -1,0 +1,137 @@
+{
+  "_note": "Router cases: expected = the skill the routing table in skills/fswpdevops/SKILL.md must pick, or 'ask' for the closed question. Checked by route_check.py.",
+  "cases": [
+    {
+      "prompt": "critique the homepage template and patterns of my block theme",
+      "expected": "fswpdevops-critic"
+    },
+    {
+      "prompt": "is the settings screen of my plugin consistent with wp-admin, usability wise",
+      "expected": "fswpdevops-critic"
+    },
+    {
+      "prompt": "I want to contribute a core patch for a bug in wp_list_pluck",
+      "expected": "fswpdevops-core"
+    },
+    {
+      "prompt": "how do I set up wordpress-develop and file a Trac ticket",
+      "expected": "fswpdevops-core"
+    },
+    {
+      "prompt": "review this plugin folder for code quality",
+      "expected": "fswpdevops-review"
+    },
+    {
+      "prompt": "is this code over-engineered",
+      "expected": "fswpdevops-review"
+    },
+    {
+      "prompt": "submit my plugin to wordpress.org",
+      "expected": "fswpdevops-release"
+    },
+    {
+      "prompt": "bump the version and zip the theme for release",
+      "expected": "fswpdevops-release"
+    },
+    {
+      "prompt": "set up wp-env and github actions for this repo",
+      "expected": "fswpdevops-ci"
+    },
+    {
+      "prompt": "which toolchain do I need for local development with docker",
+      "expected": "fswpdevops-ci"
+    },
+    {
+      "prompt": "my archive page has slow queries and no caching",
+      "expected": "fswpdevops-performance"
+    },
+    {
+      "prompt": "improve core web vitals and lcp on the homepage",
+      "expected": "fswpdevops-performance"
+    },
+    {
+      "prompt": "fix the spacing and typography so it looks better",
+      "expected": "fswpdevops-design"
+    },
+    {
+      "prompt": "which design tokens should my block setup have",
+      "expected": "fswpdevops-design"
+    },
+    {
+      "prompt": "write block.json for a custom block with the interactivity api",
+      "expected": "fswpdevops-block"
+    },
+    {
+      "prompt": "add a block variation and a block pattern",
+      "expected": "fswpdevops-block"
+    },
+    {
+      "prompt": "add a rest route with a permission callback",
+      "expected": "fswpdevops-api"
+    },
+    {
+      "prompt": "register an abilities api ability for this feature",
+      "expected": "fswpdevops-api"
+    },
+    {
+      "prompt": "how do I add a nonce and sanitize this form input",
+      "expected": "fswpdevops-security"
+    },
+    {
+      "prompt": "is there an xss or csrf risk here",
+      "expected": "fswpdevops-security"
+    },
+    {
+      "prompt": "plan a plugin with a settings page and cron job",
+      "expected": "fswpdevops-plan"
+    },
+    {
+      "prompt": "what would it take to move this to a block theme",
+      "expected": "fswpdevops-plan"
+    },
+    {
+      "prompt": "fix the fatal error after upgrading php",
+      "expected": "fswpdevops-maintain"
+    },
+    {
+      "prompt": "build an add-on for woocommerce that adds a field",
+      "expected": "fswpdevops-maintain"
+    },
+    {
+      "prompt": "build me a block theme for a photography portfolio",
+      "expected": "fswpdevops-theme"
+    },
+    {
+      "prompt": "create a child theme with a custom header",
+      "expected": "fswpdevops-theme"
+    },
+    {
+      "prompt": "build me a plugin that manages events with a shortcode",
+      "expected": "fswpdevops-plugin"
+    },
+    {
+      "prompt": "scaffold a new plugin with a custom post type",
+      "expected": "fswpdevops-plugin"
+    },
+    {
+      "prompt": "run the gate on my project",
+      "expected": "fswpdevops-qa"
+    },
+    {
+      "prompt": "run phpcs and phpstan and check the tests",
+      "expected": "fswpdevops-qa"
+    },
+    {
+      "prompt": "help me with my site",
+      "expected": "ask"
+    },
+    {
+      "prompt": "make my project better",
+      "expected": "ask"
+    },
+    {
+      "prompt": "I need this done properly this week",
+      "expected": "ask"
+    }
+  ]
+}
