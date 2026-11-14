@@ -1,6 +1,6 @@
 ---
 name: fswpdevops-api
-description: Domain skill for WordPress REST API and Abilities API work in Full-Stack WP DevOps. Covers registering routes with schemas, argument validation and sanitization, permission callbacks, controller classes, exposing post types and meta, authentication (cookie nonce, application passwords), pagination and errors, and registering abilities with input and output schemas and safety annotations. Use for any custom endpoint or machine-readable capability in a plugin or theme.
+description: Use for WordPress REST API and Abilities API work in Full-Stack WP DevOps. Domain skill for WordPress REST API and Abilities API work in Full-Stack WP DevOps. Covers registering routes with schemas, argument validation and sanitization, permission callbacks, controller classes, exposing post types and meta, authentication (cookie nonce, application passwords), pagination and errors, and registering abilities with input and output schemas and safety annotations. Use for any custom endpoint or machine-readable capability in a plugin or theme.
 ---
 
 # FSWPDevOps API Developer

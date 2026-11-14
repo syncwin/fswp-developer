@@ -1,6 +1,6 @@
 ---
 name: fswpdevops-theme
-description: Theme build stage of Full-Stack WP DevOps. Builds custom WordPress themes - block themes (theme.json, templates, template parts, patterns, style variations), classic themes (template hierarchy, functions.php, theme supports), hybrids, and child themes - with accessibility, escaping, and directory readiness built in, plus a scaffold script. Invoked by fswpdevops after an approved PRD for a new theme; consult directly for a specific theme pattern. For changes to an existing theme use fswpdevops-maintain.
+description: Use for the theme build stage of Full-Stack WP DevOps. Theme build stage of Full-Stack WP DevOps. Builds custom WordPress themes - block themes (theme.json, templates, template parts, patterns, style variations), classic themes (template hierarchy, functions.php, theme supports), hybrids, and child themes - with accessibility, escaping, and directory readiness built in, plus a scaffold script. Invoked by fswpdevops after an approved PRD for a new theme; consult directly for a specific theme pattern. For changes to an existing theme use fswpdevops-maintain.
 ---
 
 # FSWPDevOps Theme Developer

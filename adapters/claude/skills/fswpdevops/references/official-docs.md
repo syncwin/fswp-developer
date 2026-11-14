@@ -77,4 +77,4 @@ Reachability: entries marked (checked) were fetched successfully on 2026-09-28 a
 
 ## Using these pages
 
-Summarize in your own words and link; do not paste page text into generated files or the user's code comments. Code examples in the handbooks are for understanding, not for copying wholesale; write the implementation for the user's requirements.
+The plugin summarizes these pages in its own words and links to them; page text is not pasted into generated files or the user's code comments. Code examples in the handbooks are for understanding, not for copying wholesale; the implementation is written for the user's requirements.

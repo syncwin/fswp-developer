@@ -1,6 +1,6 @@
 ---
 name: fswpdevops-maintain
-description: Change stage for existing WordPress code in Full-Stack WP DevOps. Updates, fixes, refactors, and upgrades existing plugins and themes without breaking them, and builds add-ons for products you do not own (WooCommerce extensions, page-builder elements, extensions of other plugins) using hooks instead of edits to third-party files. Covers reading before changing, parity lists, deprecation, host compatibility, upgrade paths, and patch delivery. Invoked by fswpdevops after an approved change brief; use directly for safe-change or add-on questions.
+description: Use when changing existing WordPress code in Full-Stack WP DevOps. Change stage for existing WordPress code in Full-Stack WP DevOps. Updates, fixes, refactors, and upgrades existing plugins and themes without breaking them, and builds add-ons for products you do not own (WooCommerce extensions, page-builder elements, extensions of other plugins) using hooks instead of edits to third-party files. Covers reading before changing, parity lists, deprecation, host compatibility, upgrade paths, and patch delivery. Invoked by fswpdevops after an approved change brief; use directly for safe-change or add-on questions.
 ---
 
 # FSWPDevOps Maintainer

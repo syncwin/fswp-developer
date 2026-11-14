@@ -1,6 +1,6 @@
 ---
 name: fswpdevops-design
-description: Design role skill of Full-Stack WP DevOps. Sets the WordPress design language for a theme, block, pattern or admin screen. Native-first, uses theme.json design tokens (palette, type scale, spacing, layout) and core blocks before custom code, builds reusable block patterns, designs every state, applies accessibility rules, and respects the existing design language of a site it did not create. Loaded by the build skills when a plan touches UI. Use when the user asks directly for WordPress design tokens, theme.json styling, block patterns, style variations, or UI/UX decisions for a theme, block or plugin screen.
+description: Use for design language decisions in Full-Stack WP DevOps. Design role skill of Full-Stack WP DevOps. Sets the WordPress design language for a theme, block, pattern or admin screen. Native-first, uses theme.json design tokens (palette, type scale, spacing, layout) and core blocks before custom code, builds reusable block patterns, designs every state, applies accessibility rules, and respects the existing design language of a site it did not create. Loaded by the build skills when a plan touches UI. Use when the user asks directly for WordPress design tokens, theme.json styling, block patterns, style variations, or UI/UX decisions for a theme, block or plugin screen.
 ---
 
 # FSWPDevOps Designer

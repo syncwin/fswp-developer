@@ -1,6 +1,6 @@
 ---
 name: fswpdevops-qa
-description: Verification stage of Full-Stack WP DevOps. Runs the mechanical gate for plugins and themes (house-rule scripts, PHP lint, PHPCS with WordPress standards, PHP compatibility, PHPStan with WordPress stubs), the manual checklist, PRD or change-brief scenario tests, and the pre-release check. Reports PASS, FAIL, or NOT RUN and never implies a skipped check passed. Invoked by fswpdevops after a build and again before delivery; use directly to audit any plugin or theme folder.
+description: Use for the verification stage of Full-Stack WP DevOps. Verification stage of Full-Stack WP DevOps. Runs the mechanical gate for plugins and themes (house-rule scripts, PHP lint, PHPCS with WordPress standards, PHP compatibility, PHPStan with WordPress stubs), the manual checklist, PRD or change-brief scenario tests, and the pre-release check. Reports PASS, FAIL, or NOT RUN and never implies a skipped check passed. Invoked by fswpdevops after a build and again before delivery; use directly to audit any plugin or theme folder.
 ---
 
 # FSWPDevOps QA Engineer

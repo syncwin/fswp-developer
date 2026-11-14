@@ -1,6 +1,6 @@
 ---
 name: fswpdevops-plugin
-description: Plugin build stage of Full-Stack WP DevOps. House standards and code templates for real WordPress plugins (not shortcode snippets) - folder anatomy, activation/uninstall lifecycle, custom post types and tables, admin UI tiers, front-end output on the Atomic Framework, REST and cron, i18n, distribution, and the Tier 3 React admin stack - plus a scaffold script. Also the base structure for add-ons. Invoked by fswpdevops after an approved PRD; use directly for a specific plugin build pattern.
+description: Use for the plugin build stage of Full-Stack WP DevOps. Plugin build stage of Full-Stack WP DevOps. House standards and code templates for real WordPress plugins (not shortcode snippets) - folder anatomy, activation/uninstall lifecycle, custom post types and tables, admin UI tiers, front-end output on the Atomic Framework, REST and cron, i18n, distribution, and the Tier 3 React admin stack - plus a scaffold script. Also the base structure for add-ons. Invoked by fswpdevops after an approved PRD; use directly for a specific plugin build pattern.
 ---
 
 # FSWPDevOps Plugin Developer

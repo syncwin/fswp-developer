@@ -1,5 +1,7 @@
 # Coding standards, i18n, and accessibility (foundational, always applied)
 
+Contents: PHP essentials; Prefixing; PHP inline documentation; JavaScript, CSS, HTML; Internationalization (i18n); Accessibility (a11y); Documentation standard; How other skills use this.
+
 WordPress coding standards are mandatory for Core and recommended for plugins and themes; they cover style plus interoperability, translatability, and security practices. This reference states them as working rules. It was checked against the PHP coding standards page on developer.wordpress.org (2026-09-28). The other standards pages are listed in `fswpdevops/references/official-docs.md`; open them before enforcing a detail you are unsure about.
 
 ## PHP essentials (verified)
