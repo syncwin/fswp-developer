@@ -20,9 +20,7 @@ main bootstrap (which has this too, redundantly but harmlessly).
 
 ## 2. Capability checks — before any privileged action
 
-Never rely on a nonce alone to gate a privileged action; a nonce
-proves the request came from your form, not that the requester is
-allowed to do the thing.
+A nonce proves that a request came from the plugin's own form; it does not show that the requester is allowed to perform the action, so the capability check is what gates a privileged action.
 
 ```php
 if ( ! current_user_can( 'manage_options' ) ) {

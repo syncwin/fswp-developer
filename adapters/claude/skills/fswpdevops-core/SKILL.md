@@ -1,6 +1,6 @@
 ---
 name: fswpdevops-core
-description: WordPress Core contribution stage of Full-Stack WP DevOps. Guides a contributor through finding or filing a Trac ticket, setting up the wordpress-develop checkout and test environment, writing a patch or GitHub pull request that follows Core coding standards, inline documentation, backward compatibility and tests, and preparing the ticket comment; also routes block-editor changes to the Gutenberg repository and security reports to the private process. Invoked by fswpdevops for Core patches; use directly for Core workflow questions.
+description: Use when contributing a WordPress Core patch with Full-Stack WP DevOps. WordPress Core contribution stage of Full-Stack WP DevOps. Guides a contributor through finding or filing a Trac ticket, setting up the wordpress-develop checkout and test environment, writing a patch or GitHub pull request that follows Core coding standards, inline documentation, backward compatibility and tests, and preparing the ticket comment; also routes block-editor changes to the Gutenberg repository and security reports to the private process. Invoked by fswpdevops for Core patches; use directly for Core workflow questions.
 ---
 
 # FSWPDevOps Core Contributor

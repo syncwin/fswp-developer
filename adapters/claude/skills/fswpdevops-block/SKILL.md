@@ -1,6 +1,6 @@
 ---
 name: fswpdevops-block
-description: Domain skill for WordPress block editor work in Full-Stack WP DevOps. Covers building custom Gutenberg blocks (block.json, static and dynamic rendering, attributes, supports, InnerBlocks, variations, deprecations, block bindings), block patterns, and the Interactivity API (data-wp directives, stores, server-side state), with the @wordpress/scripts build workflow. Use for any custom block, pattern, or front-end interactivity in a plugin or theme.
+description: Use for WordPress block editor work in Full-Stack WP DevOps. Domain skill for WordPress block editor work in Full-Stack WP DevOps. Covers building custom Gutenberg blocks (block.json, static and dynamic rendering, attributes, supports, InnerBlocks, variations, deprecations, block bindings), block patterns, and the Interactivity API (data-wp directives, stores, server-side state), with the @wordpress/scripts build workflow. Use for any custom block, pattern, or front-end interactivity in a plugin or theme.
 ---
 
 # FSWPDevOps Block Developer

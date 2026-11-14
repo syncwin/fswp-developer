@@ -1,6 +1,6 @@
 ---
 name: fswpdevops-release
-description: Release and distribution role for Full-Stack WP DevOps. Prepares plugins and themes for shipping - the WordPress.org plugin directory guidelines and theme review requirements (verified against the official pages), required plugin and theme headers, readme.txt rules, versioning and tagging, packaging, changelog discipline, and private-distribution basics. Use when the target is WordPress.org, when checking distribution readiness, or before any release.
+description: Use for release and distribution work in Full-Stack WP DevOps. Release and distribution role for Full-Stack WP DevOps. Prepares plugins and themes for shipping - the WordPress.org plugin directory guidelines and theme review requirements (verified against the official pages), required plugin and theme headers, readme.txt rules, versioning and tagging, packaging, changelog discipline, and private-distribution basics. Use when the target is WordPress.org, when checking distribution readiness, or before any release.
 ---
 
 # FSWPDevOps Release Manager

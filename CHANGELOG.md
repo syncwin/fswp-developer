@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.8.1] - 2026-11-14
+
+### Fixed
+- Cleared all directory validator warnings: 15 skill descriptions now lead with a "Use when/for" trigger (all trigger phrases kept), `coding-standards.md` has a contents list, and three reference passages (official-docs, plugin-guidelines, security) are worded as descriptive guidance instead of instructions aimed at the model.
+
 ## [0.8.0] - 2026-11-13
 
 ### Changed

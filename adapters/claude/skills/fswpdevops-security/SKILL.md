@@ -1,6 +1,6 @@
 ---
 name: fswpdevops-security
-description: Shared WordPress security baseline for Full-Stack WP DevOps. The rules for validating and sanitizing input, escaping output by context, capability checks, nonces, prepared SQL, safe file handling, REST and AJAX authorization, and secrets, for plugins, themes, add-ons, and Core patches. Use whenever code reads request data, prints data, queries the database, handles uploads, or exposes an endpoint; loaded by the build, extend, and review skills.
+description: Use for the shared WordPress security baseline in Full-Stack WP DevOps. Shared WordPress security baseline for Full-Stack WP DevOps. The rules for validating and sanitizing input, escaping output by context, capability checks, nonces, prepared SQL, safe file handling, REST and AJAX authorization, and secrets, for plugins, themes, add-ons, and Core patches. Use whenever code reads request data, prints data, queries the database, handles uploads, or exposes an endpoint; loaded by the build, extend, and review skills.
 ---
 
 # FSWPDevOps Security Engineer

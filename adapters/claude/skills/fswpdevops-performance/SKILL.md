@@ -1,6 +1,6 @@
 ---
 name: fswpdevops-performance
-description: Domain skill for WordPress performance in Full-Stack WP DevOps. Covers measuring first (Query Monitor, profiling, Server-Timing), database and query patterns, object cache and transients, autoloaded options, asset loading, remote calls, cron and background work, and front-end vitals for plugins, themes, and Core patches. Use when code is slow, when writing queries or loops, or when the PRD lists performance requirements.
+description: Use for WordPress performance work in Full-Stack WP DevOps. Domain skill for WordPress performance in Full-Stack WP DevOps. Covers measuring first (Query Monitor, profiling, Server-Timing), database and query patterns, object cache and transients, autoloaded options, asset loading, remote calls, cron and background work, and front-end vitals for plugins, themes, and Core patches. Use when code is slow, when writing queries or loops, or when the PRD lists performance requirements.
 ---
 
 # FSWPDevOps Performance Engineer

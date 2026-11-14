@@ -1,6 +1,6 @@
 ---
 name: fswpdevops-critic
-description: Critique stage of Full-Stack WP DevOps. A read-only design and UX critique of finished WordPress front-end and admin UI (block theme templates and patterns, block editor experience, plugin settings screens) after the build and before the fswpdevops-review pass. Judges against the plan and the site's existing design language through UX heuristics, hierarchy, consistency, states, accessibility and copy, using rendered screenshots or code as evidence. Reports structured findings with severity, evidence and fix at confidence 80 or higher and ends with a one-line verdict. Never edits. Use when the user asks for a UX critique, design review or visual hierarchy check of a WordPress theme, block, pattern or admin screen.
+description: Use for the critique stage of Full-Stack WP DevOps. Critique stage of Full-Stack WP DevOps. A read-only design and UX critique of finished WordPress front-end and admin UI (block theme templates and patterns, block editor experience, plugin settings screens) after the build and before the fswpdevops-review pass. Judges against the plan and the site's existing design language through UX heuristics, hierarchy, consistency, states, accessibility and copy, using rendered screenshots or code as evidence. Reports structured findings with severity, evidence and fix at confidence 80 or higher and ends with a one-line verdict. Never edits. Use when the user asks for a UX critique, design review or visual hierarchy check of a WordPress theme, block, pattern or admin screen.
 ---
 
 # FSWPDevOps Critic
